@@ -72,11 +72,11 @@ h2{
 }
 
 footer{
+    width: 100%;
     background: #03344e;
     color: white;
     text-align: center;
     padding: 10px;
     position:inherit;
     bottom: 0;
-    width: 100%;
 }
