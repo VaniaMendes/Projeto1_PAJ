@@ -1,6 +1,7 @@
 *{
     background-color: #03344e;
 }
+<<<<<<< HEAD
 
 * {
     box-sizing: border-box;
@@ -72,4 +73,37 @@ nav li {
 .left-menu{
     justify-content: flex-start;
 
+=======
+h1{
+    font-size: 500;
+    color: aliceblue;
+}
+
+.left-menu{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center-menu{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-menu{
+
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+>>>>>>> fa1a66a81d3934c7fcb0ad0d592ac43841575df4
 }
