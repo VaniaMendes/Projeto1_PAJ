@@ -1,27 +1,23 @@
 *{
-  
-    background: #03344e;
     box-sizing: border-box;
     margin: 0;
-    padding: 100;
+    padding: 0;
 }
 
 body{
     font-family: sans-serif;
+    background: rgb(1, 4, 30);
 }
 
 .main-login{
-    width: 90%;
-    height: 95%;
-    background: #03344e;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .left-login{
-    width: 50%;
-    height: 50%;
+    width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,78 +25,67 @@ body{
 }
 
 .image-login{
-    width: 10%;
+    width: 50%;
 }
 
 .right-login{
-    width: 80%;
-    height:80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-}
-h1{
-    text-align: left;
-}
 .fraseInicial{
     font-size: 50px;
     font-family: 'Courier New', Courier, monospace;
     color:aliceblue;
     text-align: center;
-
 }
 
-
-.card-login{
-    width:60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px 25px;
+.card-login {
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
     background: rgb(6, 75, 110);
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgb(1, 4, 30);
-    
+    color: white;
+    margin: 20px;
+    box-sizing: border-box;
 }
 
-.textfield{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px 0;
+.textfield {
+    margin-bottom: 20px;
 }
 
-.textfield > input{
+.textfield label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.textfield input {
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
     border: none;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 5px;
     background: rgb(2, 1, 19);
     color: white;
     font-size: 12pt;
     box-shadow: 0px 10px 40px rgb(1, 4, 30);
     outline: none;
-    box-sizing: border-box;
 }
 
-.textfield > label{
-    color: white;
-    margin-bottom: 10px;
-}
-
-.textfield > input::placeholder{
+.textfield input::placeholder {
     color: rgb(160, 185, 235);
 }
 
-.btn-login{
+.btn-login {
     width: 100%;
-    padding: 16px;
-    margin: 10px;
-    border:none;
+    padding: 14px;
+    border: none;
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
@@ -109,5 +94,5 @@ h1{
     color: white;
     background: rgb(4, 30, 93);
     cursor: pointer;
-    box-shadow: 0px, 10px, 40px, -12px;
+    box-shadow: 0px 10px 40px -12px;
 }

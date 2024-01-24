@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-left,
+.header-center,
+.header-right {
+    flex: 1;
+}
+
+.header-center,
+.header-right,
+.header-left img.image-login {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-right h3 {
+    margin-right: 20px;
+}
+
+.header-left img.image-login {
+    width: 140px;
+    height: auto;
+}
+
+footer{
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position:inherit;
+    bottom: 0;
+    background: rgb(6, 75, 110);
+    margin-top: 20px;
+}

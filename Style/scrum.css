@@ -1,62 +1,50 @@
-*{
-    background-color: #03344e;
+body {
+    background-color: rgb(1, 4, 30);
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+    margin: 0;
 }
 
-h1{
+h1 {
     font-size: 90px;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 
-h2{
-    background-color: rgb(6, 75, 110);
+h2 {
     font-size: 45px;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
 
-.header-right{
-    text-align: center;
-}
-
-.header-image{
-    height: 100px;
+.detail {
+    background-color: rgb(120, 153, 233);
 }
 
 .container {
     display: flex;
-    height: 100vw
+    height: 100vh;
 }
 
 nav {
     list-style-type: none;
     padding: 0;
-    margin: 0; 
+    margin: 0;
 }
 
-ul{
+ul {
     background: rgb(6, 75, 110);
     list-style-type: none;
 }
 
-li{
+li {
     background-color: rgb(120, 153, 233);
     font-size: 30px;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.detail{
-    background-color: rgb(120, 153, 233);
 }
 
 .btn-criar{
     width: 15%;
-    padding: 18px 0;
-    margin: 15px;
-    border:none;
+    padding: 14px 0;
+    margin: 10px;
+    border: none;
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
@@ -65,9 +53,7 @@ li{
     color: white;
     background: rgb(120, 153, 233);
     cursor: pointer;
-    box-shadow: 0px, 10px, 40px, -12px;
-    position:relative;
-    left: 1200px;
+    box-shadow: 0px 10px 40px -12px;
     font-size: 20px;
 }
 
@@ -77,20 +63,17 @@ li{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 15px 0px;
+    padding: 15px 0;
     background: rgb(6, 75, 110);
     border-radius: 8px;
     box-shadow: 0px 15px 30px rgb(1, 4, 30);
-    margin:10px;
+    margin: 50px;
     font-size: 30px;
-    font-family: sans-serif;
-    color: aliceblue;
 }
 
-.left-menu{
+.left-menu {
     justify-content: flex-start;
 }
-
 
 .task {
     text-align: center;
@@ -98,20 +81,39 @@ li{
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 65%;
-    margin: 120px;
-    position: relative;
-    left: 100px;
+    margin: 10px;
 }
 
+article.task {
+    margin-top: 50px;
+    margin-left: 300px;
+}
 
+article {
+    background-color: rgb(6, 75, 110);
+    padding: 20px;
+    border-radius: 8px;
+}
+article section {
+    border: 10px solid rgb(120, 153, 233);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+}
 
-footer{
-    width: 100%;
+.btn-submit {
+    width: 15%;
+    padding: 14px 0;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
     color: white;
-    text-align: center;
-    padding: 10px;
-    position:inherit;
-    margin-top: 20px;
-    bottom: 0;
-    background: rgb(6, 75, 110);
+    background: rgb(120, 153, 233);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px;
+    font-size: 20px;
 }
