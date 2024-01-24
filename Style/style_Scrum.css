@@ -42,7 +42,14 @@ ul{
 }
 
 li{
-    background-color: rgb(120, 153, 233);;
+    background-color: rgb(120, 153, 233);
+    font-size: 30px;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.detail{
+    background-color: rgb(120, 153, 233);
 }
 
 .btn-criar{
@@ -100,11 +107,11 @@ li{
 
 footer{
     width: 100%;
-    background: #03344e;
     color: white;
     text-align: center;
     padding: 10px;
     position:inherit;
     margin-top: 20px;
     bottom: 0;
+    background: rgb(6, 75, 110);
 }
