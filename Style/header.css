@@ -1,9 +1,18 @@
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center; 
     padding: 10px;
 }
+
+.header-left,
+.header-center,
 .header-right {
+    flex: 1;
+}
+
+.header-center {
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    font-size: large;
 }
