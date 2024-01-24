@@ -9,6 +9,14 @@ h1{
     text-align: center;
 }
 
+h2{
+    background-color: rgb(6, 75, 110);
+    font-size: 45px;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
 .header-right{
     text-align: center;
 }
@@ -72,29 +80,20 @@ li{
     color: aliceblue;
 }
 
-h2{
-    background-color: rgb(6, 75, 110);
-}
-
 .left-menu{
     justify-content: flex-start;
 }
 
-.tarefa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background: rgb(6, 75, 110);
-}
 
 .task {
     text-align: center;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 70%;
+    width: 65%;
+    margin: 120px;
+    position: relative;
+    left: 100px;
 }
 
 
