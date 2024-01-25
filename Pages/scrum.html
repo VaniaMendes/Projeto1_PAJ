@@ -18,7 +18,7 @@
             <h1>SCRUM BOARD</h1>
         </div>
         <div class="header-right">
-            <h3>User:</h3>
+            <h3 class="user" id="user2"></h3>
         </div>
     </header>
     <hr>
@@ -73,6 +73,20 @@
     <footer>
         <p>2024 AoR. Todos os direitos reservados.</p>
     </footer>
+    <script src="script.js"></script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const username = localStorage.getItem('username');
+        const userElement = document.getElementById('user2');
+    
+        if (username) {
+            userElement.innerText = 'Bem vindo, ' + username;
+        } else {
+            // Redirect to the login page if no username is found
+            window.location.href = 'login.html';
+        }
+    });
+
 </body>
 
 </html>
