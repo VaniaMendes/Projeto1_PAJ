@@ -18,15 +18,13 @@
             <h1>SCRUM BOARD</h1>
         </div>
         <div class="header-right">
-            <h3 class="user" id="user2"></h3>
+            <h3 class="user" id="userHeader">Bem vindo, </h3>
         </div>
     </header>
     <hr>
 
     <nav>
-        <a href="tarefa.html">
-            <button class="btn-criar">Nova tarefa</button>
-        </a>
+        <input type="button" id="btn_criar" class="btn-criar" value="Nova tarefa" onclick="location.href = 'tarefa.html'">
     </nav>
 
     <div class="container">
@@ -73,19 +71,8 @@
     <footer>
         <p>2024 AoR. Todos os direitos reservados.</p>
     </footer>
-    <script src="script.js"></script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const username = localStorage.getItem('username');
-        const userElement = document.getElementById('user2');
-    
-        if (username) {
-            userElement.innerText = 'Bem vindo, ' + username;
-        } else {
-            // Redirect to the login page if no username is found
-            window.location.href = 'login.html';
-        }
-    });
+    <script src="script.js"></script>       
 
 </body>
 
