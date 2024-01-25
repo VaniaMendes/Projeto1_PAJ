@@ -1,3 +1,11 @@
+:root{
+    --color_light: rgb(120, 153, 233);
+    --color_regular: rgb(6, 75, 110);
+    --color_dark: rgb(1, 4, 30);
+    --white: white;
+    --type_font: 'Courier New', Courier, monospace;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -14,8 +22,8 @@ header {
 .header-center,
 .header-right,
 .header-left img.image-login {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+    color: var(--white);
+    font-family: var(--type_font);
     font-size: 40px;
 }
 
@@ -36,13 +44,13 @@ header {
 
 footer{
     width: 100%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--type_font);
     font-size: 20px;
-    color: white;
+    color: var(--white);
     text-align: center;
     padding: 10px;
     position:inherit;
     bottom: 0;
-    background: rgb(6, 75, 110);
+    background: var(--color_regular);
     margin-top: 20px;
 }

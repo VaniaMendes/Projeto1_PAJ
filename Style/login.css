@@ -6,7 +6,7 @@
 
 body{
     font-family: sans-serif;
-    background: rgb(1, 4, 30);
+    background: var(--color_dark);
 }
 
 .main-login{
@@ -37,8 +37,8 @@ body{
 
 .fraseInicial{
     font-size: 50px;
-    font-family: 'Courier New', Courier, monospace;
-    color:aliceblue;
+    font-family: var(--type_font);
+    color:var(--white);
     text-align: center;
 }
 
@@ -46,10 +46,10 @@ body{
     width: 100%;
     max-width: 700px;
     padding: 30px;
-    background: rgb(6, 75, 110);
+    background: var(--color_regular);
     border-radius: 20px;
-    box-shadow: 0px 10px 30px rgb(1, 4, 30);
-    color: white;
+    box-shadow: 0px 10px 30px var(--color_dark);
+    color: var(--white);
     margin: 20px;
     box-sizing: border-box;
 }
@@ -61,7 +61,7 @@ body{
 .textfield label {
     display: block;
     margin-bottom: 5px;
-    color: white;
+    color: var(--white);
 }
 
 .textfield input {
@@ -71,15 +71,15 @@ body{
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
-    background: rgb(2, 1, 19);
-    color: white;
+    background: var(--color_dark);
+    color: var(--white);
     font-size: 12pt;
-    box-shadow: 0px 10px 40px rgb(1, 4, 30);
+    box-shadow: 0px 10px 40px var(--color_dark);
     outline: none;
 }
 
 .textfield input::placeholder {
-    color: rgb(160, 185, 235);
+    color: var(--color_light);
 }
 
 .btn-login {
@@ -91,11 +91,11 @@ body{
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    color: white;
-    background: rgb(4, 30, 93);
+    color: var(--white);
+    background: var(--color_dark);
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px;   
 }
 .btn-login:hover {
-    background-color: rgb(120, 153, 233);
+    background-color: var(--color_light);
 }
