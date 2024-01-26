@@ -12,20 +12,21 @@ body{
 
 .left-login{
     width: 35%;
-    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     background-color: aliceblue;
 }
 
 .image-login{
     width: 50%;
 }
+.right-login, .left-login{
+    display:flex;
+    flex-direction: column;
+}
 
 .right-login{
     width: 90%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
