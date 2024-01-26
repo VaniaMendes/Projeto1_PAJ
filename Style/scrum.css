@@ -1,27 +1,25 @@
 body {
-    background-color: var(--color_dark);
+    background-color: var(--color_light);
     font-family: var(--type_font);
     color: var(--white);
     margin: 0;
+    height: 100%;
+
 }
 
-h1 {
-    font-size: 89px;
-    text-align: center;
-}
+
 
 h2 {
     font-size: 45px;
     text-align: center;
 }
 
-.detail {
-    background-color: var(--color_light);
-}
+
 
 .container {
     display: flex;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 nav {
@@ -41,38 +39,38 @@ li {
     margin: 15px;
 }
 
-.btn-criar{
+.btn-criar, .botaoInicio{
     width: 15%;
-    padding: 14px 0;
-    margin: 10px;
+    padding: 10px 0;
+    margin: 5px;
     border: none;
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 400px;
     letter-spacing: 3px;
     color: var(--white);
-    background: var(--color_light);
+    background: var(--color_dark);
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px;
     font-size: 20px;
 }
 
-.btn-login:hover {
-    background-color: var(--color_regular);
+.btn-criar:hover {
+    background-color: var(--color_d);
 }
 
 .left-menu, .center-menu, .right-menu {
-    width: 40%;
-    height: 90%;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 15px 0;
+    padding: 10px 0;
     background: var(--color_regular);
     border-radius: 8px;
     box-shadow: 0px 15px 30px var(--color_dark);
-    margin: 50px;
+    margin: 30px;
     font-size: 30px;
 }
 
@@ -82,10 +80,10 @@ li {
 
 .task {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid var(--white);
     border-radius: 8px;
-    width: 65%;
+    width: 40%;
     margin: 10px;
 }
 

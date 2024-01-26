@@ -6,6 +6,13 @@
     --type_font: 'Courier New', Courier, monospace;
 }
 
+header {
+    font-size: 20px;
+    text-align: left;
+    background-color: var(--color_dark);
+    padding:8px;
+}
+
 
 footer{
     width: 100%;
