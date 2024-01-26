@@ -8,13 +8,10 @@ body {
 }
 
 
-
 h2 {
-    font-size: 45px;
-    text-align: center;
+    font-size: 30px;
+    text-align: right;
 }
-
-
 
 .container {
     display: flex;
