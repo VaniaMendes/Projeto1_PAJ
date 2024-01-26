@@ -38,6 +38,7 @@ ul {
 li {
     background-color: var(--color_light);
     font-size: 30px;
+    margin: 15px;
 }
 
 .btn-criar{
