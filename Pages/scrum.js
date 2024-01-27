@@ -1,3 +1,21 @@
+
+// Get the username from local storage
+const username = localStorage.getItem("username");
+
+// Update the userHeader element
+document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
+
+
+const btn_vl = document.getElementById("btn_voltar");
+btn_vl.onclick = homeMenu;
+
+function homeMenu(){
+    localStorage.removeItem("userHeader");
+    document.location.href = '../index.html';
+}
+
+
+/*
 // Criação de array com 3 propriedades representantes de cada coluna
 
 const tasks = {
@@ -60,3 +78,4 @@ function moveTask() {
     // Adiciona o div criado (já com os dados) na "doingColumn"
     doingColumn.appendChild(taskElement);
 }
+*/

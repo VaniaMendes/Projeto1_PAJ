@@ -1,4 +1,10 @@
 
+// Get the username from local storage
+const username = localStorage.getItem("username");
+
+// Update the userHeader element
+document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
+
 
 document.getElementById("btn_submit").onclick = new_task;
 
@@ -25,11 +31,12 @@ function new_task(){
     tasks.push(task);
     console.log(tasks);
     
-    // tasks.set(title_new, description_new);
-    // const list1 = document.createElement("li");
-    // list1.innerText = title_new;
+    /*
+    tasks.set(title_new, description_new);
+    const list1 = document.createElement("li");
+    list1.innerText = title_new;
 
-    // const todoList = document.getElementById("todo");
-    // todoList.appendChild(list1);
-
+    const todoList = document.getElementById("todo");
+    todoList.appendChild(list1);
+    */
 }

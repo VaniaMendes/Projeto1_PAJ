@@ -9,35 +9,36 @@
 </head>
 
 <body class="tarefa">
-  <header>
+    <header>
         <h1>SCRUM BOARD</h1>
-  </header>
-  <nav>
-    <input type="button", class="botaoInicio" value="Voltar" onclick="location.href = 'scrum.html'">
-    
+        <h2 id="userHeader"></h2>
+    </header>
+    <nav>
+        <input type="button", class="botaoInicio" value="Voltar" onclick="location.href = 'scrum.html'">
     </nav>
 
-  <article class="task">
-      <h1>Tarefa</h1>
-      <form action="scrum.html">
-          <section class="title">
-              <h2 class="detail">Titulo:</h2>
-              <p> <textarea name="title" id="title" cols="30" rows="10"></textarea></p>
-          </section>
-          <section class="description">
-              <h2 class="detail">Descrição</h2>
-              <p><textarea name="description" id="description" cols="30" rows="10"></textarea></p>
-          </section>
-          <input type="submit" id="btn_submit" class="btn-submit" value="Submeter">
-      </form>
-  </article>
+    <div class="task">
+        <form action="scrum.html">
+                <h1>TAREFA</h1>
+                <div class="textfield">
+                    <label>Titulo</label>
+                    <input type="text" id="title1" placeholder="Insira o titulo da tarefa">
+                </div>
+                <div class="textfield">
+                    <label>Password</label>
+                    <input type="text" id="description1" placeholder="Insira a descrição da tarefa">
+                </div>
+                <div>
+                    <input type="submit" id="btn_submit" class="btn-submit" value="Gravar">
+                </div>
+        </form>
+    </div>
 
-  <footer>
-      <p class="footer">2024 AoR. Todos os direitos reservados.</p>
-  </footer>
+    <footer>
+        <p class="footer">2024 AoR. Todos os direitos reservados.</p>
+    </footer>
 
-  <script type="text/javascript" src="task.js"></script>
-
+    <script type="text/javascript" src="task.js"></script>
 </body>
 
 </html>
