@@ -11,6 +11,7 @@ header {
     text-align: left;
     background-color: var(--color_dark);
     padding: 2px;
+    color: var(--white);
 
 }
 
