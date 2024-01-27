@@ -9,10 +9,94 @@ document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 const btn_vl = document.getElementById("btn_voltar");
 btn_vl.onclick = homeMenu;
 
-function homeMenu(){
+const btnTarefa = document.getElementById("btn_criar");
+btnTarefa.onclick = menuTarefa;
+
+
+//Todas as tarefas que faz quando entra na segunda pagina
+function menuTarefa(){
     localStorage.removeItem("userHeader");
-    document.location.href = '../index.html';
-}
+    
+    // Carrega as tarefas do localStorage quando a página é carregada
+    window.addEventListener('load', function () {
+        var storedTasks = localStorage.getItem('tasks');
+
+        if (storedTasks) {
+            // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
+            tasks = JSON.parse(storedTasks);
+
+            // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)
+            renderTasksOnPage();
+        }
+    });
+        
+    
+    document.location.href = 'task.html';
+    }
+
+
+//Quando clica no botao Inicio
+function homeMenu(){
+        localStorage.removeItem("userHeader");
+        document.location.href = '../index.html';
+}    
+
+document.addEventListener('DOMContentLoaded', function(){
+    const todoColumn = document.getElementById('todo-cards');
+    const doingColumn = document.getElementById('doing-cards');
+    const doneColumn = document.getElementById('done-cards');
+
+    const tasks = [
+        { id: 1, text: 'Task 1' },
+        { id: 2, text: 'Task 2' },
+        { id: 3, text: 'Task 3' }
+
+    ]
+
+    renderTasks(todoColumn, tasks);
+
+    function renderTasks(column, tasks){
+        tasks.forEach(function (task) {
+            const card = createCard(task);
+            column.appendChild(card);
+        });
+    }
+
+    function createCard(task){
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.textContent = task.text;
+
+        card.addEventListener('click', function(){
+            moveTask(task.id);
+        });
+        return card;
+    }
+
+    //Funcao mover a task para outra coluna
+
+    function moveTask(taskId){
+        const taskIndex = tasks.findIndex(function(task){
+            return task.id === taskId;
+        });
+
+        if(taskIndex !== -1){
+            const movedTask = tasks.splice(taskIndex,1)[0];
+
+            var nextColumnId;
+            if(todoColumn.contains(event.target)){
+                nextColumnId = 'doing-cards';
+            }
+            
+            const nextColumn = document.getElementById(nextColumnId);
+            renderTasks(nextColumn, [movedTask]);
+        }
+    }
+
+
+})
+
+
 
 
 /*

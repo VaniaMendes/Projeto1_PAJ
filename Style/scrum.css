@@ -74,6 +74,15 @@ li {
 .left-menu {
     justify-content: flex-start;
 }
+.cards {
+    height: 300px;
+    width: 200px;
+    margin-top: 10px;
+    border: 1px solid #888;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
 
 
 /*Formatacao relativa à task.html-->*/
@@ -130,18 +139,25 @@ li {
 }
 #title1{
     width: 400px;
-  
+    text-transform: uppercase;
 
 }
 #description1{
-
-    
     height: 200px;
     width: 100%; 
-  box-sizing: border-box;
-  padding: 8px; 
-  margin-bottom: 10px; 
-  font-size: 14px; 
-  line-height: 1.5;
+    box-sizing: border-box;
+    padding: 8px; 
+    margin-bottom: 10px; 
+    font-size: 14px; 
+    line-height: 1.5;
 
+}
+
+.container h1{
+    font-size: 50px;
+    color: var(--color_dark);
+}
+.label{
+    font-size: 20px;
+    font-weight: 700;
 }
