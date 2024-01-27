@@ -18,3 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
         userHeader.innerHTML = "Welcome, " + storedUsername;
     }
 });
+
+
+
+localStorage.setItem("name", "John Doe");
+localStorage.getItem("name");
+
+removeItem(keyname)

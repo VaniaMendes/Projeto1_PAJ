@@ -2,7 +2,16 @@
 
 document.getElementById("btn_submit").onclick = new_task;
 
-tasks = Array();
+// Uses the existant array if it exists in localStorage or create a new one
+const storedTasks = sessionStorage.getItem("tasks");
+if (storedTasks) {
+    tasks =storedTasks;
+}
+else {
+    tasks = Array();
+}
+
+
 
 function new_task(){
     
