@@ -8,15 +8,11 @@ function login() {
 
     if(user1 === ""){
         alert("Por favor preencha os campos.");
-        return;
-            
+        return;  
     }  
-        window.location.href = "Pages/scrum.html";
-        localStorage.removeItem("username");     
-
-        localStorage.setItem("username", user1);
-  
-    
+    window.location.href = "Pages/scrum.html";
+    localStorage.removeItem("username");
+    localStorage.setItem("username", user1);
 } 
 
 

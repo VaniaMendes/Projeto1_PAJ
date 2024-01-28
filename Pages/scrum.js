@@ -5,9 +5,16 @@ const username = localStorage.getItem("username");
 // Update the userHeader element
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
+const btn_in = document.getElementById("btn_inicio");
+btn_in.onclick = homeMenu;
 
-const btn_vl = document.getElementById("btn_voltar");
-btn_vl.onclick = homeMenu;
+//Quando clica no botao Inicio
+function homeMenu(){
+    // localStorage.clear();        [VC] Acho que esta linha fica melhor substituída pela seguinte
+    localStorage.removeItem("username");
+    document.location.href = '../index.html';
+}  
+
 
 const btnTarefa = document.getElementById("btn_criar");
 btnTarefa.onclick = menuTarefa;
@@ -35,11 +42,7 @@ function menuTarefa(){
     }
 
 
-//Quando clica no botao Inicio
-function homeMenu(){
-        localStorage.clear();
-        document.location.href = '../index.html';
-}  
+
 document.addEventListener('DOMContentLoaded', function() {
     // Seu código JavaScript aqui
 
