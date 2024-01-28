@@ -16,55 +16,60 @@ function homeMenu(){
 }  
 
 
-const btnTarefa = document.getElementById("btn_criar");
-btnTarefa.onclick = menuTarefa;
+const btnNewTask = document.getElementById("btn_criar");
+btnNewTask.onclick = taskMenu;
 
 
-//Todas as tarefas que faz quando entra na segunda pagina
-function menuTarefa(){
+//Todas as tarefas que faz quando entra na segunda página
+function taskMenu(){
     localStorage.removeItem("userHeader");
     
     // Carrega as tarefas do localStorage quando a página é carregada
     window.addEventListener('load', function () {
-        var storedTasks = localStorage.getItem('tasks');
+        let storedTasks = localStorage.getItem('tasks');
 
         if (storedTasks) {
             // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
             tasks = JSON.parse(storedTasks);
 
-            // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)
+        
+            // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)    [VC] Falta editar aqui alguma coisa?
             renderTasksOnPage();
         }
     });
-        
     
     document.location.href = 'task.html';
-    }
+}
 
 
+// window.onload = () =>{       [VC] Acho que este comando substitui o: document.addEventListener('DOMContentLoaded', function() { e fica como os slides da prof pg.74
+// };
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Seu código JavaScript aqui
 
     // Carregar as tarefas existentes do localStorage, se houver
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
     // Listar as tarefas nos quadros
-    listarTarefas();
+    showTasks();
 
     // Função para listar as tarefas nos quadros
-    function listarTarefas() {
+    function showTasks() {
         // Limpar os quadros antes de listar novamente
         document.getElementById("todo-cards").innerHTML = "";
         document.getElementById("doing-cards").innerHTML = "";
         document.getElementById("done-cards").innerHTML = "";
 
         // Iterar sobre as tarefas e adicioná-las aos quadros apropriados
-        tasks.forEach(task => {
-            const cardElement = createCardElement(task.title);
-            const columnElement = document.getElementById(task.column);
+        for (const t of tasks){
+        // tasks.forEach(task => {
+            // const cardElement = createCardElement(task.title);
+            const cardElement = createCardElement(t.title);
+            // const columnElement = document.getElementById(task.column);
+            const columnElement = document.getElementById(t.column);
             columnElement.appendChild(cardElement);
-        });
+        // });
+        }
     }
 
     // Função para criar um elemento de cartão HTML para uma tarefa
@@ -72,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const cardElement = document.createElement("div");
         cardElement.className = "card";
         cardElement.innerHTML = `
-            <div class="card-header">${title}</div>
-
+        <div class="card-header">document.querySelector('title')</div>
+            // <div class="card-header">${title}</div>
         `;
         return cardElement;
     }

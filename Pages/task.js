@@ -25,7 +25,7 @@ function add_task(){
 
     const newId = generateID();
 
-    console.log(newId);
+    // console.log(newId); [VC] - verificar se é para apagar
     const titleInput = document.getElementById('title1');
     const descriptionInput = document.getElementById('description1');
 
@@ -52,11 +52,13 @@ function add_task(){
 
     alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
     
-    listarTarefas();
+    listTasks();
+
+    document.location.href = 'scrum.html';
     
 }
 
-function listarTarefas(){
+function listTasks(){
     // Limpar os quadros antes de listar novamente
     document.getElementById("todo-cards").innerHTML = "";
     document.getElementById("doing-cards").innerHTML = "";
