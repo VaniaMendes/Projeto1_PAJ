@@ -16,6 +16,8 @@ submitButton.onclick = add_task;
 
 //Adiciona uma nova task
 function add_task(){
+
+    document.location.href = 'scrum.html';
    
     //Gera um novo id sempre que seja criada uma tarefa
     function generateID(){
@@ -25,8 +27,18 @@ function add_task(){
 
     const newId = generateID();
 
+     
+
     // console.log(newId); [VC] - verificar se é para apagar
     const titleInput = document.getElementById('title1');
+
+
+    // [VC] - tentar implementar lógica de não permite titulo em branco
+    if(titleInput === ""){
+        alert("Por favor preencha todos os campos.");
+        return;  
+    } 
+
     const descriptionInput = document.getElementById('description1');
 
     // Obtém os valores dos inputs
@@ -52,11 +64,11 @@ function add_task(){
 
     alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
     
-    listTasks();
-
-    document.location.href = 'scrum.html';
-    
+   // listTasks();
 }
+
+
+/*
 
 function listTasks(){
     // Limpar os quadros antes de listar novamente
@@ -84,6 +96,6 @@ function createCardElement(title) {
     `;
     return cardElement;
 }
-
+*/
 
 

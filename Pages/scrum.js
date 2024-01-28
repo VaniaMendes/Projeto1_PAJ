@@ -76,13 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function createCardElement(title) {
         const cardElement = document.createElement("div");
         cardElement.className = "card";
+        cardElement.draggable = true;
         cardElement.innerHTML = `
-        <div class="card-header">document.querySelector('title')</div>
-            // <div class="card-header">${title}</div>
-        `;
+        <div class="card-header">${title}</div>
+    `;
         return cardElement;
     }
 });
+
+
 
 
 
