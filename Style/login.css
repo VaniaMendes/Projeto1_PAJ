@@ -57,6 +57,7 @@ html, body{
 }
 .card-login h1{
     padding-bottom: 60px;
+    text-transform: uppercase;
 }
 .textfield {
     margin-bottom: 20px;

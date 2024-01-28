@@ -17,42 +17,31 @@
 
     <nav>
         <input type="button" id="btn_voltar" class="botaoInicio" value="Início">
-        <input type="button" id="btn_criar" class="btn-criar" value="Nova tarefa" onclick="location.href = 'task.html'">
+        <input type="button" id="btn_criar" class="btn-criar" value="Nova tarefa">
     </nav>
 
     <div class="container">
-        <div class="left-menu">
+        <div class="left-menu" id="todo-column">
             <h2>TO DO</h2>
-            <ul id=todo>
-                <li>Tarefa 1</li>
-                <li>Tarefa 2</li>
-                <li>Tarefa 3</li>
-            </ul>
+            <div class="cards" id="todo-cards"></div>
         </div>
 
-        <div class="center-menu">
+        <div class="center-menu" id="doing-column">
             <h2>DOING</h2>
-            <ul>
-                <li>Tarefa 4</li>
-                <li>Tarefa 5</li>
-                <li>Tarefa 6</li>
-            </ul>
+            <div class="cards" id="doing-cards"></div>
         </div>
 
-        <div class="right-menu">
+        <div class="right-menu" id="done-column">
             <h2>DONE</h2>
-            <ul>
-                <li>Tarefa 7</li>
-                <li>Tarefa 8</li>
-                <li>Tarefa 9</li>
-            </ul>
+            <div class="cards" id="done-cards"></div>
         </div>
     </div>
 
     <footer>
         <p>2024 AoR. Todos os direitos reservados.</p>
     </footer>
-    <script type="text/javascript" src="scrum.js"></script>       
+    <script type="text/javascript" src="scrum.js"></script>
+          
 
 </body>
 
