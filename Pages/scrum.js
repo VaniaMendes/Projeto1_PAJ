@@ -37,7 +37,7 @@ function menuTarefa(){
 
 //Quando clica no botao Inicio
 function homeMenu(){
-        localStorage.removeItem("userHeader");
+        localStorage.clear();
         document.location.href = '../index.html';
 }    
 

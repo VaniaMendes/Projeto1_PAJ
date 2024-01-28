@@ -49,6 +49,7 @@ function add_task(id, title, description){
     //Adicionar a nova tarefa ao array
     tasks.push(newTask);
     alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
+    alert(newTask.title + newTask.description);
 }
 
 
