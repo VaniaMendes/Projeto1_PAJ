@@ -43,9 +43,66 @@ window.onload = () =>{
         const cardElement = document.createElement("div");
         cardElement.className = "card";
         cardElement.draggable = true;
-        cardElement.innerHTML = `
-        <div class="card-header">${title}</div>
-    `;
+        const cardHeaderElement = document.createElement("div");
+        cardHeaderElement.className = "card-header";
+        cardHeaderElement.textContent = title;
+
+        // Adicionar evento de clique para exibir opções
+        cardHeaderElement.addEventListener("click", function () {
+            showOptions(cardElement);
+        });
+
+        cardElement.appendChild(cardHeaderElement);
+
         return cardElement;
     }
+
+    function showOptions(cardElement) {
+        // Verificar se já há opções exibidas, se sim, remover
+        const existingOptions = cardElement.querySelector('.task-options');
+        if (existingOptions) {
+            existingOptions.remove();
+            return;
+        }
+
+        // Criar opcoes de tarefa
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = "task-options";
+        optionsContainer.innerHTML = `
+            <button onclick="editTask('${cardElement.querySelector(".card-header").textContent}')">Editar</button>
+            <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
+        `;
+
+        // Adicionar opções de tarefa à página
+        cardElement.appendChild(optionsContainer);
+
+        // Adicionar um event listener para fechar as opções quando clicar fora delas
+        document.addEventListener("click", function closeOptions(event) {
+            if (!cardElement.contains(event.target)) {
+                optionsContainer.remove();
+                document.removeEventListener("click", closeOptions);
+            }
+        });
+    }
+    
+    function deleteTask(title) {
+        // Encontrar a tarefa com o título correspondente na lista de tarefas
+        const taskIndex = tasks.findIndex(task => task.title === title);
+    
+        // Verificar se a tarefa foi encontrada
+        if (taskIndex !== -1) {
+            // Remover a tarefa da lista
+            tasks.splice(taskIndex, 1);
+    
+            // Atualizar a exibição dos quadros
+            showTasks();
+    
+            // Atualizar o localStorage
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            alert('Tarefa eliminada com sucesso' + title)
+        } else {
+            alert("Tarefa não encontrada");
+        }
+    }
+
 };
