@@ -14,32 +14,15 @@ function homeMenu(){
     document.location.href = '../index.html';
 }  
 
-const btnNewTask = document.getElementById("btn_criar");
-btnNewTask.onclick = taskMenu;
-
-
-
-//Todas as tarefas que faz quando entra na segunda página
-function taskMenu(){
-    localStorage.removeItem("userHeader");
-    document.location.href = 'task.html';
-}
-
-
 // Carrega as tarefas do localStorage quando a página é carregada
-window.addEventListener('load', function () {
+window.onload = () =>{
     let storedTasks = localStorage.getItem('tasks');
 
     if (storedTasks) {
         // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
         tasks = JSON.parse(storedTasks);
-
-                // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)    [VC] Falta editar aqui alguma coisa?
-        renderTasksOnPage();
     }
-});
-
-
+};
 
 window.onload = () =>{
 
