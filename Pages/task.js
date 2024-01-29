@@ -12,7 +12,6 @@ const submitButton = document.getElementById("btn_submit");
 submitButton.onclick = add_task;
 
 
-
 //Adiciona uma nova task
 function add_task(){
 
@@ -41,7 +40,6 @@ function add_task(){
     } 
     else{
         alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
-        document.location.href = 'scrum.html';
     }
 
     // Limpar os campos após adicionar uma nova tarefa

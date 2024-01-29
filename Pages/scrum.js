@@ -17,25 +17,28 @@ function homeMenu(){
 const btnNewTask = document.getElementById("btn_criar");
 btnNewTask.onclick = taskMenu;
 
+
+
 //Todas as tarefas que faz quando entra na segunda página
 function taskMenu(){
     localStorage.removeItem("userHeader");
-    
-    // Carrega as tarefas do localStorage quando a página é carregada
-    window.addEventListener('load', function () {
-        let storedTasks = localStorage.getItem('tasks');
-
-        if (storedTasks) {
-            // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
-            tasks = JSON.parse(storedTasks);
-
-                    // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)    [VC] Falta editar aqui alguma coisa?
-            renderTasksOnPage();
-        }
-    });
-    
     document.location.href = 'task.html';
 }
+
+
+// Carrega as tarefas do localStorage quando a página é carregada
+window.addEventListener('load', function () {
+    let storedTasks = localStorage.getItem('tasks');
+
+    if (storedTasks) {
+        // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
+        tasks = JSON.parse(storedTasks);
+
+                // Exemplo: renderiza as tarefas ao carregar a página (substitua por sua lógica)    [VC] Falta editar aqui alguma coisa?
+        renderTasksOnPage();
+    }
+});
+
 
 
 window.onload = () =>{
@@ -57,10 +60,8 @@ window.onload = () =>{
         for (const t of tasks){
         
             const cardElement = createCardElement(t.title);
-            
             const columnElement = document.getElementById(t.column);
             columnElement.appendChild(cardElement);
-        
         }
     }
 
