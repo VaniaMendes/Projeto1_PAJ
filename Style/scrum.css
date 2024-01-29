@@ -1,12 +1,14 @@
+/* Formatação relativa à scrum.html --> */
+
 body {
     background-color: var(--color_light);
     font-family: var(--type_font);
     color: var(--white);
     margin: 0;
-    height: 100%;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
 
 h2 {
     font-size: 30px;
@@ -14,9 +16,11 @@ h2 {
 }
 
 .container {
+    flex: 1;
     display: flex;
-    height: 100%;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 nav {
@@ -37,14 +41,14 @@ li {
 }
 
 .btn-criar, .botaoInicio, .botaoVoltar{
-    width: 15%;
+    width: 25%;
     padding: 10px 0;
     margin: 5px;
     border: none;
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
-    font-weight: 400px;
+    font-weight: 400;
     letter-spacing: 3px;
     color: var(--white);
     background: var(--color_dark);
@@ -74,6 +78,7 @@ li {
 .left-menu {
     justify-content: flex-start;
 }
+
 .cards {
     height: 300px;
     width: 300px;
@@ -81,22 +86,36 @@ li {
     border: 1px solid #888;
     padding: 5px;
     background-color:var(--color_dark);
+    overflow: auto;
 }
 
+/* Formatação relativa à task.html --> */
 
-
-/*Formatacao relativa à task.html-->*/
-.task {
+.task-form {
     width: 100%;
-    max-width: 700px;
     padding: 30px;
     background: var(--color_regular);
     border-radius: 20px;
     box-shadow: 0px 10px 30px var(--color_dark);
-    color: var(--white);
     margin: 20px;
-    box-sizing: border-box;
 }
+
+#taskH1{
+    font-family: var(--type_font);
+    color: var(--white);
+    font-size: 40px;
+    text-align: left;
+    padding-bottom: 40px;
+}
+
+.containerT {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .btn-submit {
     width: 30%;
     padding: 14px 0;
@@ -105,7 +124,7 @@ li {
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 3px;
     color: var(--white);
     background: var(--color_dark);
@@ -117,47 +136,52 @@ li {
 .btn-submit:hover {
     background-color: var(--color_regular);
 }
+
 .textfield{
-   
-        margin-bottom: 5px;
-        color: var(--white);
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        border: none;
-        border-radius: 5px;
-        background: var(--color_dark);
-        color: var(--white);
-        font-size: 12pt;
-        box-shadow: 0px 10px 40px var(--color_dark);
-        outline: none;
-        text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--white);
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--color_dark);
+    color: var(--white);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--color_dark);
+    text-transform: uppercase;
 }
+
 .textfield input::placeholder {
     color: var(--color_light);
 }
-#title1{
-    width: 400px;
-    text-transform: uppercase;
 
+.textfield label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white);
+    width: 400px;
+    font-size: 20px;
+    font-weight: 700;   
 }
+
+.textfield input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--color_dark);
+    color: var(--white);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--color_dark);
+    border: 2px solid var(--color_regular);
+    border-radius: 5px; 
+}
+
 #description1{
     height: 200px;
-    width: 100%; 
-    box-sizing: border-box;
-    padding: 8px; 
-    margin-bottom: 10px; 
-    font-size: 14px; 
-    line-height: 1.5;
-
-}
-
-.container h1{
-    font-size: 50px;
-    color: var(--color_dark);
-}
-.label{
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
 }
