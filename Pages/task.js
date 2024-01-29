@@ -36,7 +36,7 @@ function add_task(){
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
     if(titleInput.value === ""){
-        alert("Por favor preencha todos os campos.");
+        alert("Por favor preencha o título.");
     } 
     else{
         alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
