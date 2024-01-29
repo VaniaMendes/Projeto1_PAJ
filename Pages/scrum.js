@@ -14,16 +14,6 @@ function homeMenu(){
     document.location.href = '../index.html';
 }  
 
-// Carrega as tarefas do localStorage quando a página é carregada
-window.onload = () =>{
-    let storedTasks = localStorage.getItem('tasks');
-
-    if (storedTasks) {
-        // Se existirem tarefas no localStorage, converte a string JSON de volta para um array de objetos
-        tasks = JSON.parse(storedTasks);
-    }
-};
-
 window.onload = () =>{
 
     // Carregar as tarefas existentes do localStorage, se houver
