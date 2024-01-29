@@ -69,7 +69,7 @@ window.onload = () =>{
         const optionsContainer = document.createElement('div');
         optionsContainer.className = "task-options";
         optionsContainer.innerHTML = `
-            <button onclick="editTask('${cardElement.querySelector(".card-header").textContent}')">Editar</button>
+            <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
             <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
             <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
 
