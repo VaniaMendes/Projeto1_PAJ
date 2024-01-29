@@ -56,6 +56,7 @@ window.onload = () =>{
 
         return cardElement;
     }
+}
 
     function showOptions(cardElement) {
         // Verificar se já há opções exibidas, se sim, remover
@@ -69,7 +70,7 @@ window.onload = () =>{
         const optionsContainer = document.createElement('div');
         optionsContainer.className = "task-options";
         optionsContainer.innerHTML = `
-            <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
+            <button onclick="editTask('${cardElement.querySelector(".card-header").textContent}')">Editar</button>
             <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
             <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
         `;
@@ -86,24 +87,24 @@ window.onload = () =>{
         });
     }
     
-    function deleteTask(title) {
-        // Encontrar a tarefa com o título correspondente na lista de tarefas
-        const taskIndex = tasks.findIndex(task => task.title === title);
     
-        // Verificar se a tarefa foi encontrada
-        if (taskIndex !== -1) {
-            // Remover a tarefa da lista
-            tasks.splice(taskIndex, 1);
-    
-            // Atualizar a exibição dos quadros
+    function deleteTask(title, tasks) {
+        for(let i = 0; i<tasks.lenght; i++){
+            if(tasks[i].title.toLowerCase()===title.toLowerCase()){
+                tasks.splice(i,1);
+                 // Atualizar a exibição dos quadros
             showTasks();
     
             // Atualizar o localStorage
             localStorage.setItem("tasks", JSON.stringify(tasks));
             alert('Tarefa eliminada com sucesso' + title)
-        } else {
+                break;
+    
+        }else{
             alert("Tarefa não encontrada");
         }
     }
-
-};
+}
+    
+const cardElement = document.querySelector('.card');
+cardElement.addEventListener('click', function(){showOptions(cardElement);});
