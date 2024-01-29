@@ -72,7 +72,6 @@ window.onload = () =>{
             <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
             <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
             <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
-
         `;
 
         // Adicionar opções de tarefa à página
