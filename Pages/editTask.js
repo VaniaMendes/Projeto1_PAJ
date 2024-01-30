@@ -8,11 +8,16 @@ document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 // Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
 let tasks = JSON.parse(localStorage.getItem("tasks"))
 
-document.getElementById('title2').value = localStorage.getItem('titleEdit');
-document.getElementById('description2').value = localStorage.getItem('descriptionEdit');
+let titleText = document.getElementById('title2');
+let descriptionText = document.getElementById('description2')
+
+titleText.value = localStorage.getItem('titleEdit');
+descriptionText.value = localStorage.getItem('descriptionEdit');
 
 
-const submitButton = document.getElementById("btn_edt");
+
+
+const editButton = document.getElementById("btn_edt");
 submitButton.onclick = edit_task;
 
 
