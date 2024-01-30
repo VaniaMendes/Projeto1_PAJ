@@ -118,7 +118,6 @@ function consultTask(title) {
 }
 
 
-
 function deleteTask(title) {
     // Encontrar a tarefa com o título correspondente na lista de tarefas
      const taskIndex = tasks.findIndex((task) => task.title === title);
@@ -135,6 +134,26 @@ function deleteTask(title) {
      } else {
        alert("Tarefa não encontrada");
      }
+   }
+
+   function moveTask(title){
+    const destinationColumn = prompt("Digite o destino: [todo], [doing] ou [done]") + '-cards';
+
+    // Verifica se o usuário inseriu um destino
+    if (destinationColumn !== null) {
+        const taskIndex = tasks.findIndex((task) => task.title === title);
+
+        if (taskIndex !== -1) {
+            tasks[taskIndex].column = destinationColumn;
+
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            window.onload();
+        }
+        
+
+    }else{
+        alert('Essa coluna não existe. Verifique o destino')
+}
    }
 
 
