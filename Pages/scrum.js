@@ -15,9 +15,7 @@ function homeMenu() {
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-
 window.onload = () => {
-
   // Listar as tarefas nos quadros
   showTasks();
 
@@ -44,6 +42,8 @@ window.onload = () => {
     const cardHeaderElement = document.createElement("div");
     cardHeaderElement.className = "card-header";
     cardHeaderElement.textContent = title;
+ 
+  
 
     // Adicionar evento de clique para exibir opções
     cardHeaderElement.addEventListener("click", function () {
@@ -64,22 +64,27 @@ window.onload = () => {
     }
   });
 
-    function showOptions(cardElement) {
-        // Verificar se já há opções exibidas, se sim, remover
-        const existingOptions = cardElement.querySelector('.task-options');
-        if (existingOptions) {
-            existingOptions.remove();
-            return;
-        }
+  function showOptions(cardElement) {
+    // Verificar se já há opções exibidas, se sim, remover
+    const existingOptions = cardElement.querySelector(".task-options");
+    if (existingOptions) {
+      existingOptions.remove();
+      return;
+    }
 
-
-        // Criar opcoes de tarefa
-        const optionsContainer = document.createElement('div');
-        optionsContainer.className = "task-options";
-        optionsContainer.innerHTML = `
-            <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
-            <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
-            <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
+    // Criar opcoes de tarefa
+    const optionsContainer = document.createElement("div");
+    optionsContainer.className = "task-options";
+    optionsContainer.innerHTML = `
+            <button onclick="consultTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Consultar</button>
+            <button onclick="deleteTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Apagar</button>
+            <button onclick="moveTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Mover</button>
         `;
 
     // Adicionar opções de tarefa à página
@@ -95,34 +100,29 @@ window.onload = () => {
   }
 };
 
-
 // Consult task function
 function consultTask(title) {
   const taskIndex = tasks.findIndex((task) => task.title === title);
 
   if (taskIndex !== -1) {
-    const titleEdit = tasks[taskIndex].title;
-    const descriptionEdit = tasks[taskIndex].description;
 
-    localStorage.setItem("titleEdit", titleEdit);
-    localStorage.setItem("descriptionEdit", descriptionEdit);
+    sessionStorage.setItem('index', taskIndex);
+    window.location.href = "editTask.html";
 
-    try {
-      window.location.href = 'editTask.html';
-    } catch (error) {
-      console.error('Error during redirection:', error);
-    }
-    } else {
-        console.error('Task not found:', title);
-      }
+  } else {
+    alert("Tarefa não encontrada");
+  }
 }
-
 
 function deleteTask(title) {
     // Encontrar a tarefa com o título correspondente na lista de tarefas
      const taskIndex = tasks.findIndex((task) => task.title === title);
      // Verificar se a tarefa foi encontrada
      if (taskIndex !== -1) {
+
+      //Confirmacao por parte do usuario da remocao da tarefa
+      const userConfirmed = confirm("Tem a certeza que pretende remover esta tarefa?");
+      if(userConfirmed){
        // Remover a tarefa da lista
        tasks.splice(taskIndex, 1);
    
@@ -134,29 +134,41 @@ function deleteTask(title) {
      } else {
        alert("Tarefa não encontrada");
      }
+     
    }
+  }
 
-   function moveTask(title){
-    const destinationColumn = prompt("Digite o destino: [todo], [doing] ou [done]") + '-cards';
 
-    // Verifica se o usuário inseriu um destino
-    if (destinationColumn !== null) {
-        const taskIndex = tasks.findIndex((task) => task.title === title);
+   function moveTask(title) {
+    const validColumns = ['todo-cards', 'doing-cards', 'done-cards'];
 
-        if (taskIndex !== -1) {
-            tasks[taskIndex].column = destinationColumn;
-
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            window.onload();
+    // Cria uma caixa de diálogo com botões das colunas
+    Swal.fire({
+        title: 'Selecione a coluna de destino',
+        input: 'select',
+        inputOptions: {
+            'todo-cards': 'ToDo',
+            'doing-cards': 'Doing',
+            'done-cards': 'Done'
+        },
+        inputPlaceholder: 'Selecione a coluna',
+        showCancelButton: true,
+        inputValidator: (value) => {
+            const destinationColumn = value;
+            if (validColumns.includes(destinationColumn)) {
+                const taskIndex = tasks.findIndex((task) => task.title === title);
+                if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
+                  alert('A tarefa já se encontra nesta coluna');
+                }else if(validColumns.includes(destinationColumn)){
+                    tasks[taskIndex].column = destinationColumn;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    window.onload();
+                
+            } else {
+                alert('Coluna inválida. Verifique o destino.');
+            }
+          }
         }
-        
-
-    }else{
-        alert('Essa coluna não existe. Verifique o destino')
+      
+    });
 }
-   }
-
-
-
-
-

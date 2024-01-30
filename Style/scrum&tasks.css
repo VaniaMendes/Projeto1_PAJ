@@ -63,12 +63,11 @@ li {
 
 .left-menu, .center-menu, .right-menu {
     width: 100%;
-    height: auto;
+    height: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 10px 0;
-    background: var(--color_regular);
+    background: var(--color_dark);
     border-radius: 8px;
     box-shadow: 0px 15px 30px var(--color_dark);
     margin: 30px;
@@ -81,13 +80,41 @@ li {
 
 .cards {
     height: 300px;
-    width: 300px;
+    width: 400px;
     margin-top: 10px;
-    border: 1px solid #888;
     padding: 5px;
-    background-color:var(--color_dark);
+    background-color:var(--color_regular);
     overflow: auto;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color:var(--color_dark);
+
 }
+.card-header{
+    border-radius: 10px;
+    box-shadow: 10px 10px 40px -12px;
+    margin: 10px;
+
+
+}
+
+
+  .task-options button {
+    padding: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: var(--color_light);
+    cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+  }
+
+  .task-options button:hover {
+    background-color:var(--color_dark);
+    color: var(--white);
+  }
+
 
 /* Formatação relativa à task.html --> */
 
@@ -112,7 +139,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    
 }
 
 .btn-submit, .btn-edit {
@@ -181,6 +208,6 @@ li {
 }
 
 #description1, #description2{
-    height: 200px;
+    height: 100px;
     font-size: 18px;
 }

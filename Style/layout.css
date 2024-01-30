@@ -1,7 +1,7 @@
 :root{
     --color_light: rgb(139, 151, 180);
     --color_regular: rgb(105, 156, 182);
-    --color_dark: rgb(1, 4, 30);
+    --color_dark: #01041e;
     --white: white;
     --type_font: 'Courier New', Courier, monospace;
 }
