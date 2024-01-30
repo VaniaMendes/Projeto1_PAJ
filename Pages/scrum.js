@@ -15,9 +15,7 @@ function homeMenu() {
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-
 window.onload = () => {
-
   // Listar as tarefas nos quadros
   showTasks();
 
@@ -66,22 +64,27 @@ window.onload = () => {
     }
   });
 
-    function showOptions(cardElement) {
-        // Verificar se já há opções exibidas, se sim, remover
-        const existingOptions = cardElement.querySelector('.task-options');
-        if (existingOptions) {
-            existingOptions.remove();
-            return;
-        }
+  function showOptions(cardElement) {
+    // Verificar se já há opções exibidas, se sim, remover
+    const existingOptions = cardElement.querySelector(".task-options");
+    if (existingOptions) {
+      existingOptions.remove();
+      return;
+    }
 
-
-        // Criar opcoes de tarefa
-        const optionsContainer = document.createElement('div');
-        optionsContainer.className = "task-options";
-        optionsContainer.innerHTML = `
-            <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
-            <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
-            <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
+    // Criar opcoes de tarefa
+    const optionsContainer = document.createElement("div");
+    optionsContainer.className = "task-options";
+    optionsContainer.innerHTML = `
+            <button onclick="consultTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Consultar</button>
+            <button onclick="deleteTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Apagar</button>
+            <button onclick="moveTask('${
+              cardElement.querySelector(".card-header").textContent
+            }')">Mover</button>
         `;
 
     // Adicionar opções de tarefa à página
@@ -97,28 +100,19 @@ window.onload = () => {
   }
 };
 
-
 // Consult task function
 function consultTask(title) {
   const taskIndex = tasks.findIndex((task) => task.title === title);
 
   if (taskIndex !== -1) {
-    const titleEdit = tasks[taskIndex].title;
-    const descriptionEdit = tasks[taskIndex].description;
 
-    localStorage.setItem("titleEdit", titleEdit);
-    localStorage.setItem("descriptionEdit", descriptionEdit);
+    sessionStorage.setItem('index', taskIndex);
+    window.location.href = "editTask.html";
 
-    try {
-      window.location.href = 'editTask.html';
-    } catch (error) {
-      console.error('Error during redirection:', error);
-    }
-    } else {
-        console.error('Task not found:', title);
-      }
+  } else {
+    alert("Tarefa não encontrada");
+  }
 }
-
 
 function deleteTask(title) {
     // Encontrar a tarefa com o título correspondente na lista de tarefas
@@ -179,3 +173,6 @@ function deleteTask(title) {
     });
 }
 
+function moveTask(title) {
+  const destinationColumn =
+    prompt("Digite o destino: [todo], [doing] ou [done]") + "-cards";
