@@ -19,12 +19,14 @@ descriptionText.value = tasks[index].description;
 titleText.onclick = change_Name;
 descriptionText.onclick = change_Name;
 
-const editButton = document.getElementById("btn_edt");
+
 
 //Muda nome do botão Editar para Gravar
 function change_Name(){
     editButton.value = "Gravar";
 }
+
+const editButton = document.getElementById("btn_edt");
 
 editButton.onclick = edit_task;
 

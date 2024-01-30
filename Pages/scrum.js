@@ -172,7 +172,3 @@ function deleteTask(title) {
       
     });
 }
-
-function moveTask(title) {
-  const destinationColumn =
-    prompt("Digite o destino: [todo], [doing] ou [done]") + "-cards";
