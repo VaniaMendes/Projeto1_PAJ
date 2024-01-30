@@ -1,13 +1,13 @@
-// Get the username from local storage
+// Obter o nome de utilizador do armazenamento local
 const username = localStorage.getItem("username");
 
-// Update the userHeader element
+// Atualizar o elemento userHeader
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 const btn_in = document.getElementById("btn_inicio");
 btn_in.onclick = homeMenu;
 
-// When press "btn_inicio"
+// Função para voltar ao menu inicial
 function homeMenu() {
   localStorage.removeItem("username");
   document.location.href = "../index.html";
@@ -42,20 +42,17 @@ window.onload = () => {
     const cardHeaderElement = document.createElement("div");
     cardHeaderElement.className = "card-header";
     cardHeaderElement.textContent = title;
- 
-  
 
-    // Adicionar evento de clique para exibir opções
+    // Adicionar Event Listener para exibir opções
     cardHeaderElement.addEventListener("click", function () {
       showOptions(cardElement);
     });
 
     cardElement.appendChild(cardHeaderElement);
-
     return cardElement;
   }
 
-  // Adicionar um event listener para fechar as opções quando clicar fora delas
+  // Adicionar um Event Listener para fechar as opções quando clicar fora delas
   document.addEventListener("click", function closeOptions(event) {
     const optionsContainer = document.querySelector(".task-options");
     if (optionsContainer && !optionsContainer.contains(event.target)) {
@@ -90,7 +87,7 @@ window.onload = () => {
     // Adicionar opções de tarefa à página
     cardElement.appendChild(optionsContainer);
 
-    // Adicionar um event listener para fechar as opções quando clicar fora delas
+    // Adicionar um Event Listener para fechar as opções quando clicar fora delas
     document.addEventListener("click", function closeOptions(event) {
       if (!cardElement.contains(event.target)) {
         optionsContainer.remove();
@@ -100,75 +97,77 @@ window.onload = () => {
   }
 };
 
-// Consult task function
+// Função consultar tarefa
 function consultTask(title) {
   const taskIndex = tasks.findIndex((task) => task.title === title);
 
   if (taskIndex !== -1) {
-
-    sessionStorage.setItem('index', taskIndex);
+    sessionStorage.setItem("index", taskIndex);
     window.location.href = "editTask.html";
-
   } else {
     alert("Tarefa não encontrada");
   }
 }
 
+// Função apagar tarefa
 function deleteTask(title) {
-    // Encontrar a tarefa com o título correspondente na lista de tarefas
-     const taskIndex = tasks.findIndex((task) => task.title === title);
-     // Verificar se a tarefa foi encontrada
-     if (taskIndex !== -1) {
+  // Encontrar a tarefa com o título correspondente na lista de tarefas
+  const taskIndex = tasks.findIndex((task) => task.title === title);
+  // Verificar se a tarefa foi encontrada
+  if (taskIndex !== -1) {
+    //Confirmação do utilizador de apagar tarefa
+    const userConfirmed = confirm(
+      "Tem a certeza que pretende remover esta tarefa?"
+    );
+    if (userConfirmed) {
+      // Remover a tarefa da lista
+      tasks.splice(taskIndex, 1);
 
-      //Confirmacao por parte do usuario da remocao da tarefa
-      const userConfirmed = confirm("Tem a certeza que pretende remover esta tarefa?");
-      if(userConfirmed){
-       // Remover a tarefa da lista
-       tasks.splice(taskIndex, 1);
-   
-       // Atualizar o localStorage
-       localStorage.setItem("tasks", JSON.stringify(tasks));
-       
-       alert(" A tarefa com o título " + " ' "+ title + " ' " + "  foi eliminada com sucesso.");
-       window.onload();
-     } else {
-       alert("Tarefa não encontrada");
-     }
-     
-   }
+      // Atualizar o localStorage
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+
+      alert(
+        " A tarefa com o título " +
+          " ' " +
+          title +
+          " ' " +
+          "  foi eliminada com sucesso."
+      );
+      window.onload();
+    } else {
+      alert("Tarefa não encontrada");
+    }
   }
+}
 
-
-   function moveTask(title) {
-    const validColumns = ['todo-cards', 'doing-cards', 'done-cards'];
-
-    // Cria uma caixa de diálogo com botões das colunas
-    Swal.fire({
-        title: 'Selecione a coluna de destino',
-        input: 'select',
-        inputOptions: {
-            'todo-cards': 'ToDo',
-            'doing-cards': 'Doing',
-            'done-cards': 'Done'
-        },
-        inputPlaceholder: 'Selecione a coluna',
-        showCancelButton: true,
-        inputValidator: (value) => {
-            const destinationColumn = value;
-            if (validColumns.includes(destinationColumn)) {
-                const taskIndex = tasks.findIndex((task) => task.title === title);
-                if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
-                  alert('A tarefa já se encontra nesta coluna');
-                }else if(validColumns.includes(destinationColumn)){
-                    tasks[taskIndex].column = destinationColumn;
-                    localStorage.setItem("tasks", JSON.stringify(tasks));
-                    window.onload();
-                
-            } else {
-                alert('Coluna inválida. Verifique o destino.');
-            }
-          }
+// Função mover tarefa
+function moveTask(title) {
+  const validColumns = ["todo-cards", "doing-cards", "done-cards"];
+  // Cria uma caixa de diálogo com botões das colunas
+  Swal.fire({
+    title: "Selecione a coluna de destino",
+    input: "select",
+    inputOptions: {
+      "todo-cards": "ToDo",
+      "doing-cards": "Doing",
+      "done-cards": "Done",
+    },
+    inputPlaceholder: "Selecione a coluna",
+    showCancelButton: true,
+    inputValidator: (value) => {
+      const destinationColumn = value;
+      if (validColumns.includes(destinationColumn)) {
+        const taskIndex = tasks.findIndex((task) => task.title === title);
+        if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
+          alert("A tarefa já se encontra nesta coluna");
+        } else if (validColumns.includes(destinationColumn)) {
+          tasks[taskIndex].column = destinationColumn;
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+          window.onload();
+        } else {
+          alert("Coluna inválida. Verifique o destino.");
         }
-      
-    });
+      }
+    },
+  });
 }
