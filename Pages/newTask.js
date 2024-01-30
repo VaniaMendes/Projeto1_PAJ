@@ -24,7 +24,6 @@ function add_task(){
 
     // Create a new task object
     const newTask = {
-        id: tasks.length + 1,
         title: title,
         column: 'todo-cards',
         description: description
