@@ -13,13 +13,10 @@ function homeMenu() {
   document.location.href = "../index.html";
 }
 
-let tasks = (JSON.parse(localStorage.getItem("tasks")) || []);
-
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 
 window.onload = () => {
-  // Carregar as tarefas existentes do localStorage, se houver
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
   // Listar as tarefas nos quadros
   showTasks();
@@ -80,7 +77,7 @@ window.onload = () => {
         const optionsContainer = document.createElement('div');
         optionsContainer.className = "task-options";
         optionsContainer.innerHTML = `
-            <button onclick="editTask('${cardElement.querySelector(".card-header").textContent}')">Editar</button>
+            <button onclick="consultTask('${cardElement.querySelector(".card-header").textContent}')">Consultar</button>
             <button onclick="deleteTask('${cardElement.querySelector(".card-header").textContent}')">Apagar</button>
             <button onclick="moveTask('${cardElement.querySelector(".card-header").textContent}')">Mover</button>
         `;
@@ -115,7 +112,11 @@ function consultTask(title) {
     } catch (error) {
       console.error('Error during redirection:', error);
     }
+    } else {
+        console.error('Task not found:', title);
+      }
 }
+
 
 
 function deleteTask(title) {
@@ -136,13 +137,7 @@ function deleteTask(title) {
      }
    }
 
-   function moveTask(){
 
-   }
 
-    
-  } else {
-    console.error('Task not found:', title);
-  }
-}
+
 
