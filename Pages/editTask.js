@@ -6,43 +6,18 @@ const username = localStorage.getItem("username");
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem("tasks"))
 
-const submitButton = document.getElementById("btn_submit");
-submitButton.onclick = add_task;
+document.getElementById('title2').value = localStorage.getItem('titleEdit');
+document.getElementById('description2').value = localStorage.getItem('descriptionEdit');
+
+
+const submitButton = document.getElementById("btn_edt");
+submitButton.onclick = edit_task;
 
 
 //Adiciona uma nova task
-function add_task(){
+function edit_task(){
 
-    const titleInput = document.getElementById('title1');
-    const descriptionInput = document.getElementById('description1');
-
-    // Obtém os valores dos inputs
-    const title = titleInput.value;
-    const description = descriptionInput.value;
-
-    // Create a new task object
-    const newTask = {
-        id: tasks.length + 1,
-        title: title,
-        column: 'todo-cards',
-        description: description
-    };
-
-    //Adicionar a nova tarefa ao array
-    tasks.push(newTask);
-    newTask.column ='todo-cards';
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
-    if(titleInput.value === ""){
-        alert("Por favor preencha o título.");
-    } 
-    else{
-        alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');
-    }
-
-    // Limpar os campos após adicionar uma nova tarefa
-    titleInput.value = "";
-    descriptionInput.value = "";
+    document.getElementById("btn_edt").textContent = "Gravar";
 }
