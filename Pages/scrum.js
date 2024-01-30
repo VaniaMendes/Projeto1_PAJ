@@ -13,17 +13,9 @@ function homeMenu() {
   document.location.href = "../index.html";
 }
 
-// Consult task function
-function consultTask(title) {
-  // Set the 'editTask' key in localStorage with the task title to be consulted
-  localStorage.setItem("editTask", title);
+let tasks = (JSON.parse(localStorage.getItem("tasks")) || []);
 
-  // Log to the console to check if the function is being called
-  console.log("Consulting task:", title);
 
-  // Navigate to 'editTask.html'
-  document.location.href = "editTask.html";
-}
 
 window.onload = () => {
   // Carregar as tarefas existentes do localStorage, se houver
@@ -109,24 +101,26 @@ window.onload = () => {
       }
     });
   }
-
-  function deleteTask(title) {
-    // Encontrar a tarefa com o título correspondente na lista de tarefas
-    const taskIndex = tasks.findIndex((task) => task.title === title);
-
-    // Verificar se a tarefa foi encontrada
-    if (taskIndex !== -1) {
-      // Remover a tarefa da lista
-      tasks.splice(taskIndex, 1);
-
-      // Atualizar a exibição dos quadros
-      showTasks();
-
-      // Atualizar o localStorage
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-      alert("Tarefa eliminada com sucesso" + title);
-    } else {
-      alert("Tarefa não encontrada");
-    }
-  }
 };
+
+
+// Consult task function
+function consultTask(title) {
+  const taskIndex = tasks.findIndex((task) => task.title === title);
+
+  if (taskIndex !== -1) {
+    const titleEdit = tasks[taskIndex].title;
+    const descriptionEdit = tasks[taskIndex].description;
+
+    localStorage.setItem("titleEdit", titleEdit);
+    localStorage.setItem("descriptionEdit", descriptionEdit);
+
+    try {
+      window.location.href = 'editTask.html';
+    } catch (error) {
+      console.error('Error during redirection:', error);
+    }
+  } else {
+    console.error('Task not found:', title);
+  }
+}
