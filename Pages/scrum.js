@@ -140,8 +140,9 @@ function deleteTask(title) {
      } else {
        alert("Tarefa não encontrada");
      }
-    }
+     
    }
+  }
 
 
    function moveTask(title) {
@@ -177,10 +178,4 @@ function deleteTask(title) {
       
     });
 }
-
- 
-
-
-
-
 
