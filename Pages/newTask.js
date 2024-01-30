@@ -22,9 +22,11 @@ function add_task(){
     const title = titleInput.value;
     const description = descriptionInput.value;
 
+    // Verifica se o título já existe em alguma tarefa
+    const existentTitle= tasks.some((task) => task.title === title);
+    
     // Create a new task object
     const newTask = {
-        id: tasks.length + 1,
         title: title,
         column: 'todo-cards',
         description: description
@@ -37,6 +39,8 @@ function add_task(){
 
     if(titleInput.value === ""){
         alert("Por favor preencha o título.");
+    }else if(existentTitle){
+        alert('Já existe uma tarefa com esse título');
     } 
     else{
         alert('Nova tarefa adicionada com sucesso: ' + '"'  + newTask.title + '"');

@@ -44,6 +44,8 @@ window.onload = () => {
     const cardHeaderElement = document.createElement("div");
     cardHeaderElement.className = "card-header";
     cardHeaderElement.textContent = title;
+ 
+  
 
     // Adicionar evento de clique para exibir opções
     cardHeaderElement.addEventListener("click", function () {
@@ -123,6 +125,10 @@ function deleteTask(title) {
      const taskIndex = tasks.findIndex((task) => task.title === title);
      // Verificar se a tarefa foi encontrada
      if (taskIndex !== -1) {
+
+      //Confirmacao por parte do usuario da remocao da tarefa
+      const userConfirmed = confirm("Tem a certeza que pretende remover esta tarefa?");
+      if(userConfirmed){
        // Remover a tarefa da lista
        tasks.splice(taskIndex, 1);
    
@@ -134,27 +140,45 @@ function deleteTask(title) {
      } else {
        alert("Tarefa não encontrada");
      }
+    }
    }
 
-   function moveTask(title){
-    const destinationColumn = prompt("Digite o destino: [todo], [doing] ou [done]") + '-cards';
 
-    // Verifica se o usuário inseriu um destino
-    if (destinationColumn !== null) {
-        const taskIndex = tasks.findIndex((task) => task.title === title);
+   function moveTask(title) {
+    const validColumns = ['todo-cards', 'doing-cards', 'done-cards'];
 
-        if (taskIndex !== -1) {
-            tasks[taskIndex].column = destinationColumn;
-
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            window.onload();
+    // Cria uma caixa de diálogo com botões das colunas
+    Swal.fire({
+        title: 'Selecione a coluna de destino',
+        input: 'select',
+        inputOptions: {
+            'todo-cards': 'ToDo',
+            'doing-cards': 'Doing',
+            'done-cards': 'Done'
+        },
+        inputPlaceholder: 'Selecione a coluna',
+        showCancelButton: true,
+        inputValidator: (value) => {
+            const destinationColumn = value;
+            if (validColumns.includes(destinationColumn)) {
+                const taskIndex = tasks.findIndex((task) => task.title === title);
+                if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
+                  alert('A tarefa já se encontra nesta coluna');
+                }else if(validColumns.includes(destinationColumn)){
+                    tasks[taskIndex].column = destinationColumn;
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    window.onload();
+                
+            } else {
+                alert('Coluna inválida. Verifique o destino.');
+            }
+          }
         }
-        
-
-    }else{
-        alert('Essa coluna não existe. Verifique o destino')
+      
+    });
 }
-   }
+
+ 
 
 
 
