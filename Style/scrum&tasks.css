@@ -115,7 +115,7 @@ li {
     padding: 20px;
 }
 
-.btn-submit {
+.btn-submit, .btn-edit {
     width: 30%;
     padding: 14px 0;
     margin: 10px;
@@ -132,7 +132,7 @@ li {
     font-size: 20px;
 }
 
-.btn-submit:hover {
+.btn-submit, .btn-edit:hover {
     background-color: var(--color_regular);
 }
 
@@ -180,7 +180,7 @@ li {
     border-radius: 5px; 
 }
 
-#description1{
+#description1, #description2{
     height: 200px;
     font-size: 18px;
 }
