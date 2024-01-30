@@ -14,10 +14,17 @@ function homeMenu(){
     document.location.href = '../index.html';
 }  
 
+function editTask(title){
+    document.location.href='editTask.html';
+}
+let tasks;
+
+
+
 window.onload = () =>{
 
     // Carregar as tarefas existentes do localStorage, se houver
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
     // Listar as tarefas nos quadros
     showTasks();
@@ -56,7 +63,7 @@ window.onload = () =>{
 
         return cardElement;
     }
-}
+
 
     function showOptions(cardElement) {
         // Verificar se já há opções exibidas, se sim, remover
@@ -86,25 +93,30 @@ window.onload = () =>{
             }
         });
     }
-    
-    
-    function deleteTask(title, tasks) {
-        for(let i = 0; i<tasks.lenght; i++){
-            if(tasks[i].title.toLowerCase()===title.toLowerCase()){
-                tasks.splice(i,1);
-                 // Atualizar a exibição dos quadros
-            showTasks();
-    
-            // Atualizar o localStorage
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            alert('Tarefa eliminada com sucesso' + title)
-                break;
-    
-        }else{
-            alert("Tarefa não encontrada");
-        }
-    }
 }
+
+
+function deleteTask(title) {
+    // Encontrar a tarefa com o título correspondente na lista de tarefas
+     const taskIndex = tasks.findIndex((task) => task.title === title);
+     // Verificar se a tarefa foi encontrada
+     if (taskIndex !== -1) {
+       // Remover a tarefa da lista
+       tasks.splice(taskIndex, 1);
+   
+       // Atualizar o localStorage
+       localStorage.setItem("tasks", JSON.stringify(tasks));
+       
+       alert(" A tarefa com o título " + " ' "+ title + " ' " + "  foi eliminada com sucesso.");
+       window.onload();
+     } else {
+       alert("Tarefa não encontrada");
+     }
+   }
+
+   function moveTask(){
+
+   }
+
     
-const cardElement = document.querySelector('.card');
-cardElement.addEventListener('click', function(){showOptions(cardElement);});
+
