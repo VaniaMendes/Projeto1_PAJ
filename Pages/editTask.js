@@ -48,6 +48,6 @@ function edit_saveTask() {
     alert("Alterações gravadas com sucesso!");
     titleText.disabled = true;
     descriptionText.disabled = true;
-    editButton.value = "Editar";
+    document.location.href = "scrum.html";
   }
 }
