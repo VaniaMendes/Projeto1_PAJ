@@ -3,13 +3,13 @@ btn_lg.onclick = login;
 
 // Faz login e grava o nome de utilizador
 function login() {
-    const user1 = document.getElementById("usertext1").value.trim();
-    const pass1 = document.getElementById("password1").value.trim();
+    const user = document.getElementById("index_usertext").value.trim();
+    const pass = document.getElementById("index_password").value.trim();
     // Verifica que os campos não estão em branco
-    if(user1 === "" || pass1 === ""){
+    if(user === "" || pass === ""){
         alert("Por favor preencha todos os campos.");
         return;  
     }  
     window.location.href = "Pages/scrum.html";
-    localStorage.setItem("username", user1);
+    localStorage.setItem("username", user);
 } 

@@ -92,12 +92,29 @@ li {
   margin-top: 10px;
   padding: 5px;
   background-color: var(--color_dark);
+
+  /* Verificar esta linha*/
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   color: var(--white);
   border-radius: 10px;
   overflow: auto;
 }
+
+/*The specified font family is a prioritized list, and the browser will attempt to apply
+ the first available font in the list. If the browser doesn't have access to the first font,
+  it will move on to the next one in the list.
+In this case, the preferred font is "Gill Sans," followed by "Gill Sans MT," then Calibri, 
+"Trebuchet MS," and finally a generic sans-serif font as a fallback.
+So, the priority order of font families in the given CSS code is as follows:
+"Gill Sans"
+"Gill Sans MT"
+Calibri
+"Trebuchet MS"
+Generic sans-serif (a default sans-serif font)
+The actual font that will be displayed will depend on the availability of these fonts on the user's system.
+ If none of the specified fonts are available, the browser will use a generic sans-serif font as a fallback.
+*/
 
 .card-header {
   border-radius: 6px;
