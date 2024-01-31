@@ -27,3 +27,7 @@ footer{
     bottom: 0;
     background: var(--color_regular); 
 }
+ 
+footer p{
+    margin: 0;
+}

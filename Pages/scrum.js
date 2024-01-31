@@ -159,13 +159,13 @@ function moveTask(title) {
       if (validColumns.includes(destinationColumn)) {
         const taskIndex = tasks.findIndex((task) => task.title === title);
         if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
-          alert("A tarefa já se encontra nesta coluna");
+          alert("A tarefa já se encontra nesta coluna!");
         } else if (validColumns.includes(destinationColumn)) {
           tasks[taskIndex].column = destinationColumn;
           localStorage.setItem("tasks", JSON.stringify(tasks));
           window.onload();
         } else {
-          alert("Coluna inválida. Verifique o destino.");
+          alert("Coluna inválida. Verifique o destino!");
         }
       }
     },
