@@ -24,12 +24,26 @@ function edit_saveTask() {
     titleText.disabled = false;
     descriptionText.disabled = false;
     editButton.value = "Gravar";
-  } 
+  }
   // No segundo click grava a informação e volta a proteger o texto para consulta
   else if (editButton.value === "Gravar") {
     //Grava a tarefa após edição
-    tasks[index].title = document.getElementById("title2").value;
-    tasks[index].description = document.getElementById("description2").value;
+
+    // Obtém os valores dos inputs
+    titleText.value = document.getElementById("title2").value;
+    descriptionText.value = document.getElementById("description2").value;
+
+    // Verifica tamanho máximo de caracteres do Título
+    const maxLength = 55;
+    console.log("max= " + titleText.value.length);
+    if (titleText.value.length > maxLength) {
+      alert("Máximo de caracteres para o Título = " + maxLength + "!");
+      return;
+    } else {
+      tasks[index].title = titleText.value;
+    }
+    tasks[index].description = descriptionText.value;
+
     localStorage.setItem("tasks", JSON.stringify(tasks));
     alert("Alterações gravadas com sucesso!");
     titleText.disabled = true;

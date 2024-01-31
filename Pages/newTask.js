@@ -14,12 +14,20 @@ submitButton.onclick = add_task;
 
 //Adiciona uma nova tarefa
 function add_task() {
-  const titleInput = document.getElementById("title1");
-  const descriptionInput = document.getElementById("description1");
-
+  
   // Obtém os valores dos inputs
-  const title = titleInput.value;
-  const description = descriptionInput.value;
+  let titleInput = document.getElementById("title1");
+  let descriptionInput = document.getElementById("description1");
+
+  const maxLength = 55;
+  let title = "";
+  if (titleInput.value.length > maxLength) {
+    alert("Máximo de caracteres para o Título = " + maxLength + "!");
+    return;
+  } else {
+    title = titleInput.value;
+  }
+  let description = descriptionInput.value;
 
   // Verifica se o título já existe em alguma tarefa
   const existentTitle = tasks.some((task) => task.title === title);
