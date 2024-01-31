@@ -1,5 +1,5 @@
-const btn_lg = document.getElementById("btn_login1");
-btn_lg.onclick = login;
+const btnLogin = document.getElementById("index_btn_login");
+btnLogin.onclick = login;
 
 // Faz login e grava o nome de utilizador
 function login() {

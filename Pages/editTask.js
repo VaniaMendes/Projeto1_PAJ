@@ -8,13 +8,13 @@ document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 let tasks = JSON.parse(localStorage.getItem("tasks"));
 let index = sessionStorage.getItem("index");
 
-let titleText = document.getElementById("title2");
-let descriptionText = document.getElementById("description2");
+let titleText = document.getElementById("editTask_title");
+let descriptionText = document.getElementById("editTask_description");
 
 titleText.value = tasks[index].title;
 descriptionText.value = tasks[index].description;
 
-const editButton = document.getElementById("btn_edt");
+const editButton = document.getElementById("editTask_btn_edt");
 editButton.onclick = edit_saveTask;
 
 // No primeiro click muda o painel para edição e altera o nome do botão Editar para Gravar
@@ -30,8 +30,8 @@ function edit_saveTask() {
     //Grava a tarefa após edição
 
     // Obtém os valores dos inputs
-    titleText.value = document.getElementById("title2").value;
-    descriptionText.value = document.getElementById("description2").value;
+    titleText.value = document.getElementById("editTask_title").value;
+    descriptionText.value = document.getElementById("editTask_description").value;
 
     // Verifica tamanho máximo de caracteres do Título
     const maxLength = 55;

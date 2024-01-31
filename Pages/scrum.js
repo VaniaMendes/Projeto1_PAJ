@@ -4,8 +4,8 @@ const username = localStorage.getItem("username");
 // Atualizar o elemento userHeader
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
-const btn_in = document.getElementById("btn_inicio");
-btn_in.onclick = homeMenu;
+const btnLogout = document.getElementById("scrum_btn_logout");
+btnLogout.onclick = homeMenu;
 
 // Função para voltar ao menu inicial
 function homeMenu() {
@@ -127,11 +127,7 @@ function deleteTask(title) {
       localStorage.setItem("tasks", JSON.stringify(tasks));
 
       alert(
-        " A tarefa com o título " +
-          " ' " +
-          title +
-          " ' " +
-          "  foi eliminada com sucesso."
+        " A tarefa com o título: " + title + ",  foi eliminada com sucesso."
       );
       window.onload();
     } else {
