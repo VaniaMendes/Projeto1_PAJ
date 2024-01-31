@@ -93,8 +93,7 @@ li {
   padding: 5px;
   background-color: var(--color_dark);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
+  font-size: 20px;
   color: var(--white);
   border-radius: 10px;
   overflow: auto;
@@ -107,6 +106,7 @@ li {
   border: 2px solid var(--color_regular);
   cursor: pointer;
   text-align: left;
+  padding: 5px;;
 }
 
 .card-header:hover {
@@ -238,14 +238,20 @@ li {
   box-shadow: 0px 10px 40px var(--color_dark);
   border: 2px solid var(--color_regular);
   word-wrap: break-word;
+  font-family: var(--type_font);
+  ;
   
 }
 .textfield input::placeholder {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:var(--type_font);
   color: var(--color_light);
 }
 #description1::placeholder, #description2::placeholder {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:var(--type_font);
   color: var(--color_light);
+}
+
+#title1, #title2{
+  font-family:var(--type_font);
 }
 
