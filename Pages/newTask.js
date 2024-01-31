@@ -19,6 +19,7 @@ function add_task() {
   let titleInput = document.getElementById("title1");
   let descriptionInput = document.getElementById("description1");
 
+  // Verifica tamanho máximo de caracteres do Título
   const maxLength = 55;
   let title = "";
   if (titleInput.value.length > maxLength) {
