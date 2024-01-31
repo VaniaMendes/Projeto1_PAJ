@@ -103,6 +103,11 @@ li {
   box-shadow: 10px 10px 40px -12px;
   margin: 10px;
   border: 2px solid var(--color_regular);
+  cursor: pointer;
+}
+
+.card-header:hover {
+  background-color: var(--color_light);
 }
 
 .task-options button {

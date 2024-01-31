@@ -25,17 +25,9 @@ footer{
     color: var(--white);
     text-align: center;
     bottom: 0;
-<<<<<<< Updated upstream
     background: var(--color_regular); 
 }
  
 footer p{
     margin: 0;
-=======
-    background: var(--color_regular);
-}
-
-footer p{
-    margin:0;
->>>>>>> Stashed changes
 }
