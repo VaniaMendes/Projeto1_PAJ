@@ -21,6 +21,8 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  text-align: center;
+  
 }
 
 nav {
@@ -103,6 +105,12 @@ li {
   box-shadow: 10px 10px 40px -12px;
   margin: 10px;
   border: 2px solid var(--color_regular);
+  cursor: pointer;
+  text-align: left;
+}
+
+.card-header:hover {
+  background-color: var(--color_light);
 }
 
 .task-options button {
@@ -113,6 +121,9 @@ li {
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 15px;
+  display: inline-block;
+ 
+  
 }
 
 .task-options button:hover {
@@ -185,6 +196,7 @@ li {
 }
 
 .textfield input::placeholder {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--color_light);
 }
 
@@ -213,6 +225,27 @@ li {
 
 #description1,
 #description2 {
-  height: 100px;
-  font-size: 18px;
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color_dark);
+  color: var(--white);
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px var(--color_dark);
+  border: 2px solid var(--color_regular);
+  word-wrap: break-word;
+  
 }
+.textfield input::placeholder {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--color_light);
+}
+#description1::placeholder, #description2::placeholder {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--color_light);
+}
+
