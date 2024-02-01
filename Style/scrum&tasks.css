@@ -11,11 +11,6 @@ body {
   min-height: 100vh;
 }
 
-h2 {
-  font-size: var(--font_size_large);
-  text-align: right;
-}
-
 .container {
   flex: 1;
   display: flex;
@@ -45,7 +40,7 @@ nav {
   background: var(--color_regular);
   cursor: pointer;
   box-shadow: 5px 5px 20px -12px;
-  font-size: var(--font_size_medium_high);
+  font-size: var(--font_size_medium_low);
 }
 
 .btn-nav:hover {
@@ -198,7 +193,7 @@ nav {
   background: var(--color_dark);
   color: var(--white);
   font-family: var(--type_font);
-  font-size: var(--font_size_medium_low);
+  font-size: var(--font_size_small);
   box-shadow: 5px 5px 20px -12px;
   border: 2px solid var(--color_regular);
   word-wrap: break-word;  
@@ -219,6 +214,6 @@ nav {
 #newTask_description::placeholder, 
 #editTask_description::placeholder {
   font-family:var(--type_font);
-  font-size: var(--font_size_medium_low);
+  font-size: var(--font_size_small);
   color: var(--color_light);
 }

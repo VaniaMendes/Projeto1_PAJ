@@ -34,7 +34,7 @@ html, body{
 
 .card-login {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     padding: 30px;
     background: var(--color_regular);
     border-radius: 20px;
@@ -45,8 +45,9 @@ html, body{
 }
 
 .card-login h1{
-    padding-bottom: 60px;
+    padding-bottom: 10px;
     text-transform: uppercase;
+    font-size: var(--font_size_medium_high);
 }
 
 .textfield label {

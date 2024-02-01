@@ -3,14 +3,18 @@
     --color_regular: rgb(105, 156, 182);
     --color_dark: #01041e;
     --white: white;
-    --type_font: 'Calibri';
+    --type_font: sans-serif;
     --font_size_small: 16px;
     --font_size_medium_low: 20px;
-    --font_size_medium_high: 28px;
-    --font_size_large: 30px;
+    --font_size_medium_high: 26px;
+    --font_size_large: 28px;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--type_font);
     font-size: var(--font_size_large);
     text-align: left;
     background-color: var(--color_dark);
@@ -19,7 +23,6 @@ header {
 }
 
 #userHeader{
-    font-size: var(--font_size_medium_high);
     margin-right: 50px;
 }
 
