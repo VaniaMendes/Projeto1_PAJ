@@ -9,21 +9,21 @@ document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 // Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-const submitButton = document.getElementById("btn_submit");
-submitButton.onclick = add_task;
+const submitButton = document.getElementById("newTask_btn_submit");
+submitButton.onclick = addTask;
 
 //Adiciona uma nova tarefa
-function add_task() {
+function addTask() {
   
   // Obtém os valores dos inputs
-  let titleInput = document.getElementById("title1");
-  let descriptionInput = document.getElementById("description1");
+  let titleInput = document.getElementById("newTask_title");
+  let descriptionInput = document.getElementById("newTask_description");
 
   // Verifica tamanho máximo de caracteres do Título
-  const maxLength = 55;
+  const maxLength = 50;
   let title = "";
   if (titleInput.value.length > maxLength) {
-    alert("Máximo de caracteres para o Título = " + maxLength + "!");
+    alert("Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!");
     return;
   } else {
     title = titleInput.value;
