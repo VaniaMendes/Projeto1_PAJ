@@ -33,8 +33,7 @@ html, body{
 }
 
 .card-login {
-    width: 100%;
-    max-width: 700px;
+    width: 450px;
     padding: 30px;
     background: var(--color_regular);
     border-radius: 20px;

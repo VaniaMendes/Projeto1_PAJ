@@ -99,7 +99,7 @@ nav {
   background-color: var(--color_light);
   cursor: pointer;
   font-family: var(--type_font);
-  font-size: var(--font_size_medium_low);
+  font-size: var(--font_size_small);
   display: inline-block; 
 }
 

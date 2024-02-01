@@ -38,7 +38,6 @@ window.onload = () => {
   function createCardElement(title) {
     const cardElement = document.createElement("div");
     cardElement.className = "card";
-    cardElement.draggable = true;
     const cardHeaderElement = document.createElement("div");
     cardHeaderElement.className = "card-header";
     cardHeaderElement.textContent = title;
