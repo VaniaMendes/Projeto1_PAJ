@@ -1,7 +1,7 @@
 "use strict";
 
 // Obter o nome de utilizador do armazenamento local
-const username = localStorage.getItem("username");
+let username = localStorage.getItem("username");
 
 // Atualizar o elemento userHeader
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
@@ -14,16 +14,17 @@ submitButton.onclick = addTask;
 
 //Adiciona uma nova tarefa
 function addTask() {
-  
   // Obtém os valores dos inputs
   let titleInput = document.getElementById("newTask_title");
   let descriptionInput = document.getElementById("newTask_description");
 
   // Verifica tamanho máximo de caracteres do Título
   const maxLength = 50;
-  let title = "";
+  let title;
   if (titleInput.value.length > maxLength) {
-    alert("Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!");
+    alert(
+      "Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!"
+    );
     return;
   } else {
     title = titleInput.value;
@@ -35,26 +36,22 @@ function addTask() {
 
   if (titleInput.value === "") {
     alert("Por favor preencha o título.");
+  } else if (existentTitle) {
+    alert("Já existe uma tarefa com esse título.");
   } else {
-    if (existentTitle) {
-      alert("Já existe uma tarefa com esse título.");
-    } else {
-      // Cria um novo objecto tarefa
-      const newTask = {
-        title: title,
-        column: "todo-cards",
-        description: description,
-      };
-      // Adicionar a nova tarefa ao array
-      tasks.push(newTask);
-      newTask.column = "todo-cards";
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-
-      alert("Nova tarefa adicionada com sucesso!");
-    }
-
-    // Limpar os campos após adicionar uma nova tarefa
-    titleInput.value = "";
-    descriptionInput.value = "";
+    // Cria um novo objecto tarefa
+    const newTask = {
+      title: title,
+      column: "todo-cards",
+      description: description,
+    };
+    // Adicionar a nova tarefa ao array
+    tasks.push(newTask);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    alert("Nova tarefa adicionada com sucesso!");
   }
+
+  // Limpar os campos após adicionar uma nova tarefa
+  titleInput.value = "";
+  descriptionInput.value = "";
 }
