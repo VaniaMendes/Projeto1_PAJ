@@ -52,6 +52,12 @@ window.onload = () => {
   }
 
   function showOptions(cardElement) {
+    // Verificar se já há opções exibidas, se sim, remover
+    const existingOptions = cardElement.querySelector(".task-options");
+    if (existingOptions) {
+      existingOptions.remove();
+      return;
+    }
     // Criar opcoes de tarefa
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "task-options";
