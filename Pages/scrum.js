@@ -134,8 +134,7 @@ function deleteTask(title) {
           "  foi eliminada com sucesso."
       );
       window.onload();
-    } else {
-      alert("Tarefa não encontrada");
+    
     }
   }
 }
