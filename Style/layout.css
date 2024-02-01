@@ -7,7 +7,7 @@
     --font_size_small: 16px;
     --font_size_medium_low: 20px;
     --font_size_medium_high: 28px;
-    --font_size_large: 36px;
+    --font_size_large: 30px;
 }
 
 header {
@@ -19,7 +19,7 @@ header {
 }
 
 #userHeader{
-    font-size: var(--font_size_large);
+    font-size: var(--font_size_medium_high);
     margin-right: 50px;
 }
 

@@ -52,23 +52,7 @@ window.onload = () => {
     return cardElement;
   }
 
-  // Adicionar um Event Listener para fechar as opções quando clicar fora delas
-  document.addEventListener("click", function closeOptions(event) {
-    const optionsContainer = document.querySelector(".task-options");
-    if (optionsContainer && !optionsContainer.contains(event.target)) {
-      optionsContainer.remove();
-      document.removeEventListener("click", closeOptions);
-    }
-  });
-
   function showOptions(cardElement) {
-    // Verificar se já há opções exibidas, se sim, remover
-    const existingOptions = cardElement.querySelector(".task-options");
-    if (existingOptions) {
-      existingOptions.remove();
-      return;
-    }
-
     // Criar opcoes de tarefa
     const optionsContainer = document.createElement("div");
     optionsContainer.className = "task-options";
@@ -130,7 +114,6 @@ function deleteTask(title) {
         " A tarefa com o título: " + title + ",  foi eliminada com sucesso."
       );
       window.onload();
-    
     }
   }
 }
