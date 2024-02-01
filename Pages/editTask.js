@@ -15,10 +15,10 @@ titleText.value = tasks[index].title;
 descriptionText.value = tasks[index].description;
 
 const editButton = document.getElementById("editTask_btn_edt");
-editButton.onclick = edit_saveTask;
+editButton.onclick = editTask;
 
 // No primeiro click muda o painel para edição e altera o nome do botão Editar para Gravar
-function edit_saveTask() {
+function editTask() {
   if (editButton.value === "Editar") {
     // Transforma em editável os campos de texto
     titleText.disabled = false;
@@ -34,10 +34,9 @@ function edit_saveTask() {
     descriptionText.value = document.getElementById("editTask_description").value;
 
     // Verifica tamanho máximo de caracteres do Título
-    const maxLength = 55;
-    console.log("max= " + titleText.value.length);
+    const maxLength = 45;
     if (titleText.value.length > maxLength) {
-      alert("Máximo de caracteres para o Título = " + maxLength + "!");
+      alert("Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!");
       return;
     } else {
       tasks[index].title = titleText.value;

@@ -42,9 +42,7 @@ li {
   margin: 15px;
 }
 
-.btn-criar,
-.btn-logout,
-.botaoVoltar {
+.btn-nav {
   width: 25%;
   padding: 10px 0;
   margin: 5px;
@@ -116,7 +114,7 @@ The actual font that will be displayed will depend on the availability of these 
 
 .card-header {
   border-radius: 6px;
-  box-shadow: 10px 10px 40px -12px;
+  box-shadow: 5px 5px 20px -12px;
   margin: 10px;
   border: 2px solid var(--color_regular);
   cursor: pointer;
