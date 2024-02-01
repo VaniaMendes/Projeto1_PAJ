@@ -125,7 +125,7 @@ function deleteTask(title) {
 
 // Função mover tarefa
 function moveTask(title) {
-  const validColumns = ["todo-cards", "doing-cards", "done-cards"];
+  
   // Cria uma caixa de diálogo com botões das colunas
   Swal.fire({
     title: "Selecione a coluna de destino",
@@ -139,17 +139,14 @@ function moveTask(title) {
     showCancelButton: true,
     inputValidator: (value) => {
       const destinationColumn = value;
-      if (validColumns.includes(destinationColumn)) {
+     
         const taskIndex = tasks.findIndex((task) => task.title === title);
-        if (taskIndex !== -1 && tasks[taskIndex].column === destinationColumn) {
+        if (tasks[taskIndex].column === destinationColumn) {
           alert("A tarefa já se encontra nesta coluna!");
-        } else if (validColumns.includes(destinationColumn)) {
+        } else{
           tasks[taskIndex].column = destinationColumn;
           localStorage.setItem("tasks", JSON.stringify(tasks));
           window.onload();
-        } else {
-          alert("Coluna inválida. Verifique o destino!");
-        }
       }
     },
   });
