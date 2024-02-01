@@ -3,6 +3,7 @@
 body {
   background-color: var(--color_light);
   font-family: var(--type_font);
+  font-size: var(--font_size_medium_low);
   color: var(--white);
   margin: 0;
   display: flex;
@@ -11,7 +12,7 @@ body {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: var(--font_size_large);
   text-align: right;
 }
 
@@ -22,7 +23,6 @@ h2 {
   align-items: center;
   padding: 20px;
   text-align: center;
-  
 }
 
 nav {
@@ -31,20 +31,7 @@ nav {
   margin: 0;
 }
 
-ul {
-  background: var(--color_regular);
-  list-style-type: none;
-}
-
-li {
-  background-color: var(--color_light);
-  font-size: 30px;
-  margin: 15px;
-}
-
-.btn-criar,
-.botaoInicio,
-.botaoVoltar {
+.btn-nav {
   width: 25%;
   padding: 10px 0;
   margin: 5px;
@@ -52,18 +39,16 @@ li {
   border-radius: 10px;
   outline: none;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 3px;
   color: var(--white);
   background: var(--color_regular);
   cursor: pointer;
-  box-shadow: 0px 10px 40px -12px;
-  font-size: 20px;
+  box-shadow: 5px 5px 20px -12px;
+  font-size: var(--font_size_medium_high);
 }
 
-.btn-criar:hover,
-.botaoInicio:hover,
-.botaoVoltar:hover {
+.btn-nav:hover {
   background-color: var(--color_dark);
 }
 
@@ -77,9 +62,8 @@ li {
   flex-direction: column;
   background: var(--color_regular);
   border-radius: 10px;
-  box-shadow: 0px 15px 30px var(--color_dark);
+  box-shadow: 5px 5px 20px -12px;
   margin: 30px;
-  font-size: 30px;
 }
 
 .left-menu {
@@ -92,38 +76,21 @@ li {
   margin-top: 10px;
   padding: 5px;
   background-color: var(--color_dark);
-
-  /* Verificar esta linha*/
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
   color: var(--white);
   border-radius: 10px;
   overflow: auto;
 }
 
-/*The specified font family is a prioritized list, and the browser will attempt to apply
- the first available font in the list. If the browser doesn't have access to the first font,
-  it will move on to the next one in the list.
-In this case, the preferred font is "Gill Sans," followed by "Gill Sans MT," then Calibri, 
-"Trebuchet MS," and finally a generic sans-serif font as a fallback.
-So, the priority order of font families in the given CSS code is as follows:
-"Gill Sans"
-"Gill Sans MT"
-Calibri
-"Trebuchet MS"
-Generic sans-serif (a default sans-serif font)
-The actual font that will be displayed will depend on the availability of these fonts on the user's system.
- If none of the specified fonts are available, the browser will use a generic sans-serif font as a fallback.
-*/
-
 .card-header {
   border-radius: 6px;
-  box-shadow: 10px 10px 40px -12px;
+  box-shadow: 5px 5px 20px -12px;
   margin: 10px;
   border: 2px solid var(--color_regular);
   cursor: pointer;
   text-align: left;
-  padding: 5px;;
+  padding: 5px;
+  font-family: var(--type_font);
+  font-size: var(--font_size_small);
 }
 
 .card-header:hover {
@@ -136,11 +103,9 @@ The actual font that will be displayed will depend on the availability of these 
   border: 2px solid var(--color_regular);
   background-color: var(--color_light);
   cursor: pointer;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 15px;
-  display: inline-block;
- 
-  
+  font-family: var(--type_font);
+  font-size: var(--font_size_medium_low);
+  display: inline-block; 
 }
 
 .task-options button:hover {
@@ -155,14 +120,14 @@ The actual font that will be displayed will depend on the availability of these 
   padding: 30px;
   background: var(--color_regular);
   border-radius: 10px;
-  box-shadow: 0px 10px 30px var(--color_dark);
+  box-shadow: 5px 5px 20px -12px;
   margin: 20 auto;
 }
 
 #taskH1 {
   font-family: var(--type_font);
   color: var(--white);
-  font-size: 40px;
+  font-size: var(--font_size_medium_high);
   text-align: left;
 }
 
@@ -173,8 +138,7 @@ The actual font that will be displayed will depend on the availability of these 
   align-items: center;
 }
 
-.btn-submit,
-.btn-edit {
+.btn-submit {
   width: 30%;
   padding: 14px 0;
   margin: 10px;
@@ -187,18 +151,16 @@ The actual font that will be displayed will depend on the availability of these 
   color: var(--white);
   background: var(--color_dark);
   cursor: pointer;
-  box-shadow: 0px 10px 40px -12px;
-  font-size: 20px;
+  box-shadow: 5px 5px 20px -12px;
+  font-size: var(--font_size_medium_high);
 }
 
-.btn-submit,
-.btn-edit:hover {
+.btn-submit:hover {
   background-color: var(--color_regular);
 }
 
 .textfield {
   margin-bottom: 20px;
-  color: var(--white);
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -207,26 +169,26 @@ The actual font that will be displayed will depend on the availability of these 
   border-radius: 10px;
   background: var(--color_dark);
   color: var(--white);
-  font-size: 12pt;
-  box-shadow: 0px 10px 40px var(--color_dark);
+  font-family: var(--type_font);
+  font-size: var(--font_size_medium_low);
+  box-shadow: 5px 5px 20px -12px;
   text-transform: uppercase;
-}
-
-.textfield input::placeholder {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: var(--color_light);
 }
 
 .textfield label {
   display: block;
   margin-bottom: 5px;
+  font-family: var(--type_font);
   color: var(--white);
   width: 400px;
-  font-size: 20px;
+  font-size: var(--font_size_medium_low);
   font-weight: 700;
 }
 
-.textfield input {
+#newTask_title,
+#editTask_title,
+#newTask_description,
+#editTask_description {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -235,40 +197,28 @@ The actual font that will be displayed will depend on the availability of these 
   border-radius: 10px;
   background: var(--color_dark);
   color: var(--white);
-  font-size: 12pt;
-  box-shadow: 0px 10px 40px var(--color_dark);
-  border: 2px solid var(--color_regular);
-}
-
-#description1,
-#description2 {
-  width: 100%;
-  height: 120px;
-  padding: 10px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 10px;
-  background: var(--color_dark);
-  color: var(--white);
-  font-size: 12pt;
-  box-shadow: 0px 10px 40px var(--color_dark);
-  border: 2px solid var(--color_regular);
-  word-wrap: break-word;
   font-family: var(--type_font);
-  ;
-  
-}
-.textfield input::placeholder {
-  font-family:var(--type_font);
-  color: var(--color_light);
-}
-#description1::placeholder, #description2::placeholder {
-  font-family:var(--type_font);
-  color: var(--color_light);
+  font-size: var(--font_size_medium_low);
+  box-shadow: 5px 5px 20px -12px;
+  border: 2px solid var(--color_regular);
+  word-wrap: break-word;  
 }
 
-#title1, #title2{
-  font-family:var(--type_font);
+#newTask_title,
+#editTask_title {
+  height: 50px;
 }
 
+#newTask_description,
+#editTask_description {
+  height: 120px;
+}
+
+#newTask_title::placeholder,
+#editTask_title::placeholder,
+#newTask_description::placeholder, 
+#editTask_description::placeholder {
+  font-family:var(--type_font);
+  font-size: var(--font_size_medium_low);
+  color: var(--color_light);
+}
