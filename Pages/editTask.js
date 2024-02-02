@@ -6,8 +6,11 @@ document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage
 let tasks = JSON.parse(localStorage.getItem("tasks"));
+
+//Vai buscar o indice guardado no session Storage
 let index = sessionStorage.getItem("index");
 
+//Vai buscar os campos do titulo e da descricao
 let titleText = document.getElementById("editTask_title");
 let descriptionText = document.getElementById("editTask_description");
 
