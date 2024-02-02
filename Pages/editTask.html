@@ -11,14 +11,17 @@
 
 <body class="tarefa">
     <header>
+        <!--Cabeçalho-->
         <h1>SCRUM BOARD</h1>
         <h2 id="userHeader"></h2>
     </header>
     <nav>
+        <!--menu de navegação  com o botao Voltar-->
         <input type="button", class="btn-nav" value="Voltar" onclick="location.href = 'scrum.html'">
     </nav>
     <div class="container">
         <form>
+            <!--formulario com o titulo e descricao da tarefa-->
             <div class="task-form">
                 <h1 id="taskH1">TAREFA</h1>
                 <div class="textfield">
@@ -30,6 +33,7 @@
                     <textarea type="text" id="editTask_description" disabled></textarea>
                 </div>
                 <div>
+                    <!--botão Editar-->
                     <input type="button" id="editTask_btn_submit" class="btn-submit" value="Editar">
                 </div>
             </div>
@@ -39,6 +43,6 @@
         <p>2024 AoR. Todos os direitos reservados.</p>
     </footer>
 </body>
-
-<script type="text/javascript" src="editTask.js"></script>
+<!--ficheiro javascript -->
+<script src="editTask.js"></script>
 </html>

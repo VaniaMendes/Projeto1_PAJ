@@ -1,16 +1,17 @@
 // Obter o nome de utilizador do armazenamento local
 const username = localStorage.getItem("username");
 
-// Atualizar o elemento userHeader
+// Atualizar a mensagem de boas vindas
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
 const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+//Adiciona um  event listenner ao botao Adicionar Tarefa
 const submitButton = document.getElementById("newTask_btn_submit");
 submitButton.onclick = addTask;
 
-//Adiciona uma nova tarefa
+//Criar uma nova tarefa
 function addTask() {
   // Obtém os valores dos inputs
   const titleInput = document.getElementById("newTask_title");
@@ -29,15 +30,16 @@ function addTask() {
   }
   let description = descriptionInput.value;
 
-  // Verifica se o título já existe em alguma tarefa
+  // Verifica se o título já existe em alguma tarefa, devolve um boolean
   const existentTitle = tasks.some((task) => task.title === title);
 
   if (titleInput.value === "") {
     alert("Por favor preencha o título.");
+    //Verifica se o titulo ja existe
   } else if (existentTitle) {
     alert("Já existe uma tarefa com esse título.");
   } else {
-    // Cria um novo objecto tarefa
+    // se o titulo ainda não existir cria uma nova tarefa
     const newTask = {
       title: title,
       column: "todo-cards",
@@ -45,6 +47,7 @@ function addTask() {
     };
     // Adicionar a nova tarefa ao array
     tasks.push(newTask);
+    //Grava as alterações no local Storage
     localStorage.setItem("tasks", JSON.stringify(tasks));
     alert("Nova tarefa adicionada com sucesso!");
   }
