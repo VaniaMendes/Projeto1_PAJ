@@ -89,32 +89,36 @@ window.onload = () => {
 // Função consultar tarefa
 function consultTask(title) {
   const taskIndex = tasks.findIndex((task) => task.title === title);
-  sessionStorage.setItem("index", taskIndex);
-  window.location.href = "editTask.html";
+    sessionStorage.setItem("index", taskIndex);
+    window.location.href = "editTask.html";
 }
 
 // Função apagar tarefa
 function deleteTask(title) {
   // Encontrar a tarefa com o título correspondente na lista de tarefas
   const taskIndex = tasks.findIndex((task) => task.title === title);
-  //Confirmação do utilizador de apagar tarefa
-  const userConfirmed = confirm(
-    "Tem a certeza que pretende remover esta tarefa?"
-  );
-  if (userConfirmed) {
-    // Remover a tarefa da lista
-    tasks.splice(taskIndex, 1);
+  
+    //Confirmação do utilizador de apagar tarefa
+    const userConfirmed = confirm(
+      "Tem a certeza que pretende remover esta tarefa?"
+    );
+    if (userConfirmed) {
+      // Remover a tarefa da lista
+      tasks.splice(taskIndex, 1);
 
-    // Atualizar o localStorage
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+      // Atualizar o localStorage
+      localStorage.setItem("tasks", JSON.stringify(tasks));
 
-    alert(" A tarefa com o título: " + title + ",  foi eliminada com sucesso.");
-    window.onload();
+      alert(
+        " A tarefa com o título: " + title + ",  foi eliminada com sucesso."
+      );
+      window.onload();
   }
 }
 
 // Função mover tarefa
 function moveTask(title) {
+  
   // Cria uma caixa de diálogo com botões das colunas
   Swal.fire({
     title: "Selecione a coluna de destino",
@@ -128,14 +132,14 @@ function moveTask(title) {
     showCancelButton: true,
     inputValidator: (value) => {
       const destinationColumn = value;
-
-      const taskIndex = tasks.findIndex((task) => task.title === title);
-      if (tasks[taskIndex].column === destinationColumn) {
-        alert("A tarefa já se encontra nesta coluna!");
-      } else {
-        tasks[taskIndex].column = destinationColumn;
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        window.onload();
+    
+        const taskIndex = tasks.findIndex((task) => task.title === title);
+        if (tasks[taskIndex].column === destinationColumn) {
+          alert("A tarefa já se encontra nesta coluna!");
+        } else{
+          tasks[taskIndex].column = destinationColumn;
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+          window.onload();
       }
     },
   });
