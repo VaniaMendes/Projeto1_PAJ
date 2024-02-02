@@ -5,6 +5,7 @@ body {
   font-family: var(--type_font); /* Tipo de font de letra de todo o documento*/
   margin: 0;
 }
+
 /*  Formatação do container que contém o left-login eo right login*/
 .container {
   display: grid; /* Colocação dos dois lado a lado*/
@@ -12,7 +13,8 @@ body {
   height: 97%;
   width: 100%;
 }
-/* Atribui caracteristicas iguais aos dois paineis*/
+
+/* Atribui características iguais aos dois paineís*/
 .left-login,
 .right-login {
   display: flex;
@@ -21,7 +23,8 @@ body {
   align-items: center;
   background-color: aliceblue;
 }
-/* caracteristicas da imagem*/
+
+/* Características da imagem*/
 .left-login-image {
   width: 600px;
   max-width: 400px;
@@ -30,11 +33,10 @@ body {
 
 .right-login {
   align-items: center;
-  background-color: var(
-    --color_light
-  ); /* Atribuição da cor do background do painel direito*/
+  background-color: var(--color_light); /* Atribuição da cor do background do painel direito*/
 }
-/* Caracteristicas do painel de login*/
+
+/* Características do painel de login*/
 .card-login {
   width: 450px;
   padding: 30px;
@@ -44,7 +46,8 @@ body {
   color: var(--white); /* Atribui cor ao titulo do painel*/
   box-sizing: border-box; /* Determina as dimensões do painel*/
 }
-/* Caracteristica do titulo do painel (Scrum Board)*/
+
+/* Características do titulo do painel (Scrum Board)*/
 .card-login h1 {
   padding-bottom: 10px; /* Atribui uma margema o elemento */
   text-transform: uppercase; /* transforma todas as letras em maiúsculas*/
@@ -75,7 +78,8 @@ body {
   font-size: var(--font_size_small);
   color: var(--color_light);
 }
-/* Caracteristicas do botão login*/
+
+/* Características do botão login*/
 .btn-login {
   width: 100%;
   padding: 14px;
@@ -92,6 +96,7 @@ body {
   box-shadow: 5px 5px 20px -12px;
   margin-top: 30px;
 }
+
 /* Atribui uma cor diferente quando o rato passa pelo elemento*/
 .btn-login:hover {
   background-color: var(--color_light);
