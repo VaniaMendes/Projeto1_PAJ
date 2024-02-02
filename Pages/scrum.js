@@ -1,7 +1,7 @@
 // Obter o nome de utilizador do armazenamento local
 const username = localStorage.getItem("username");
 
-// Atualizar o elemento userHeader
+// Atualizar a mensagem de boas vindas com o nome de utilizador
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 const btnLogout = document.getElementById("scrum_btn_logout");
@@ -13,7 +13,8 @@ function homeMenu() {
   document.location.href = "../index.html";
 }
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+// Carregar as tarefas existentes do armazenamento local
+let tasks = JSON.parse(localStorage.getItem("tasks"));
 
 window.onload = () => {
   // Listar as tarefas nos quadros

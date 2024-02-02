@@ -1,14 +1,14 @@
 // Obter o nome de utilizador do armazenamento local
 const username = localStorage.getItem("username");
 
-// Atualizar o elemento userHeader
+// Atualizar a mensagem de boas vindas com o nome de utilizador
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage
-let tasks = JSON.parse(localStorage.getItem("tasks"));
+const tasks = JSON.parse(localStorage.getItem("tasks"));
 
 //Vai buscar o indice guardado no session Storage
-let index = sessionStorage.getItem("index");
+const index = sessionStorage.getItem("index");
 
 //Vai buscar os campos do titulo e da descricao
 let titleText = document.getElementById("editTask_title");

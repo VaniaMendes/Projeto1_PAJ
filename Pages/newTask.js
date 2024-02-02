@@ -1,11 +1,11 @@
 // Obter o nome de utilizador do armazenamento local
 const username = localStorage.getItem("username");
 
-// Atualizar a mensagem de boas vindas
+// Atualizar a mensagem de boas vindas com o nome de utilizador
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
-// Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
-const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+// Carregar as tarefas existentes do armazenamento local, se existir um array senao cria um novo
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 //Adiciona um  event listenner ao botao Adicionar Tarefa
 const submitButton = document.getElementById("newTask_btn_submit");
@@ -19,7 +19,7 @@ function addTask() {
 
   // Verifica tamanho máximo de caracteres do Título
   const maxLength = 50;
-  const title="";
+  let title;
   if (titleInput.value.length > maxLength) {
     alert(
       "Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!"
@@ -28,7 +28,7 @@ function addTask() {
   } else {
     title = titleInput.value;
   }
-  const description = descriptionInput.value;
+  let description = descriptionInput.value;
 
   // Verifica se o título já existe em alguma tarefa, devolve um boolean
   const existentTitle = tasks.some((task) => task.title === title);
