@@ -1,5 +1,4 @@
-
-//Cria uma variável relativa ao botao login e adiciona um event listenner
+// Cria uma variável relativa ao botao login e adiciona um Event Listener
 const btnLogin = document.getElementById("index_btn_login");
 btnLogin.onclick = login;
 
@@ -12,9 +11,9 @@ function login() {
         alert("Por favor preencha todos os campos.");
         return;  
     }  
-    // Seos campos estiverem preenchidos avança para a página seguinte
+    // Se os campos estiverem preenchidos avança para a página Scrum Board
     window.location.href = "Pages/scrum.html";
 
-    //Guarda o username no localstorage
+    // Guarda o username no armazenamento local
     localStorage.setItem("username", user);
 } 
