@@ -25,7 +25,7 @@ function editTask() {
     descriptionText.disabled = false;
     editButton.value = "Gravar";
   }
-  // No segundo click grava a informação e volta a proteger o texto para consulta
+  // No segundo click grava a informação e volta à página do Scrum Board
   else if (editButton.value === "Gravar") {
     
     // Verifica tamanho máximo de caracteres do Título
@@ -41,8 +41,6 @@ function editTask() {
     //Grava a tarefa após edição
     localStorage.setItem("tasks", JSON.stringify(tasks));
     alert("Alterações gravadas com sucesso!");
-    titleText.disabled = true;
-    descriptionText.disabled = true;
     document.location.href = "scrum.html";
   }
 }

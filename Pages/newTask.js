@@ -18,7 +18,7 @@ function addTask() {
 
   // Verifica tamanho máximo de caracteres do Título
   const maxLength = 50;
-  let title;
+  const title="";
   if (titleInput.value.length > maxLength) {
     alert(
       "Ultrapassou o máximo de caracteres para o Título = " + maxLength + "!"
@@ -27,7 +27,7 @@ function addTask() {
   } else {
     title = titleInput.value;
   }
-  let description = descriptionInput.value;
+  const description = descriptionInput.value;
 
   // Verifica se o título já existe em alguma tarefa
   const existentTitle = tasks.some((task) => task.title === title);
