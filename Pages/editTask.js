@@ -5,8 +5,8 @@ const username = localStorage.getItem("username");
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage
-let tasks = JSON.parse(localStorage.getItem("tasks"));
-let index = sessionStorage.getItem("index");
+const tasks = JSON.parse(localStorage.getItem("tasks"));
+const index = sessionStorage.getItem("index");
 
 let titleText = document.getElementById("editTask_title");
 let descriptionText = document.getElementById("editTask_description");
@@ -27,12 +27,7 @@ function editTask() {
   }
   // No segundo click grava a informação e volta a proteger o texto para consulta
   else if (editButton.value === "Gravar") {
-    //Grava a tarefa após edição
-
-    // Obtém os valores dos inputs
-    titleText.value = document.getElementById("editTask_title").value;
-    descriptionText.value = document.getElementById("editTask_description").value;
-
+    
     // Verifica tamanho máximo de caracteres do Título
     const maxLength = 50;
     if (titleText.value.length > maxLength) {
@@ -43,6 +38,7 @@ function editTask() {
     }
     tasks[index].description = descriptionText.value;
 
+    //Grava a tarefa após edição
     localStorage.setItem("tasks", JSON.stringify(tasks));
     alert("Alterações gravadas com sucesso!");
     titleText.disabled = true;
