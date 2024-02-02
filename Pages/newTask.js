@@ -1,13 +1,11 @@
-"use strict";
-
 // Obter o nome de utilizador do armazenamento local
-let username = localStorage.getItem("username");
+const username = localStorage.getItem("username");
 
 // Atualizar o elemento userHeader
 document.getElementById("userHeader").innerHTML = "Bem vindo, " + username;
 
 // Carregar as tarefas existentes do localStorage, se existir um array senao cria um novo
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 const submitButton = document.getElementById("newTask_btn_submit");
 submitButton.onclick = addTask;
@@ -15,8 +13,8 @@ submitButton.onclick = addTask;
 //Adiciona uma nova tarefa
 function addTask() {
   // Obtém os valores dos inputs
-  let titleInput = document.getElementById("newTask_title");
-  let descriptionInput = document.getElementById("newTask_description");
+  const titleInput = document.getElementById("newTask_title");
+  const descriptionInput = document.getElementById("newTask_description");
 
   // Verifica tamanho máximo de caracteres do Título
   const maxLength = 50;
