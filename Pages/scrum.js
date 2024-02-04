@@ -42,9 +42,9 @@ window.onload = () => {
     const cardElement = document.createElement("div");
     cardElement.className = "card";
     // Cria uma Div e atribui a className "card-header"
-    // Altera o textContent para o título da tarefa
     const cardHeaderElement = document.createElement("div");
     cardHeaderElement.className = "card-header";
+    // Altera o textContent para o título da tarefa
     cardHeaderElement.textContent = title;
 
     // Adicionar Event Listener para exibir opções
@@ -103,9 +103,7 @@ function deleteTask(title) {
   const taskIndex = tasks.findIndex((task) => task.title === title);
 
   //Confirmação do utilizador de apagar tarefa
-  const userConfirmed = confirm(
-    "Tem a certeza que pretende remover esta tarefa?"
-  );
+  const userConfirmed = confirm("Tem a certeza que pretende remover esta tarefa?");
   if (userConfirmed) {
     // Remover a tarefa da lista
     tasks.splice(taskIndex, 1);

@@ -13,7 +13,7 @@ submitButton.onclick = addTask;
 
 // Criar uma nova tarefa
 function addTask() {
-  // Declara e atribui variáveis aos elementos do título e descrição da tarefa
+  // Declara e atribui variáveis para guardaar os elementos: título e descrição da tarefa
   const titleInput = document.getElementById("newTask_title");
   const descriptionInput = document.getElementById("newTask_description");
 
